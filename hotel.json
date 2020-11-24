@@ -1,0 +1,282 @@
+[
+  {
+    "id":"1",
+    "name":"Novotel",
+    "place":"danang",
+    "stars":"5",
+    "price":"70.99",
+    "img":"./images/novotel.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"2",
+    "name":"White Sand",
+    "place":"danang",
+    "stars":"4",
+    "price":"20.99",
+    "img":"./images/whitesand.jpg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"3",
+    "name":"Sheraton Resort",
+    "place":"danang",
+    "stars":"5",
+    "price":"75.99",
+    "img":"./images/sheratonresort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"4",
+    "name":"Peninsula Resort",
+    "place":"danang",
+    "stars":"5",
+    "price":"300.99",
+    "img":"./images/peninsularesort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"5",
+    "name":"Altara",
+    "place":"danang",
+    "stars":"3",
+    "price":"20.99",
+    "img":"./images/altara.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"6",
+    "name":"Villas Resort",
+    "place":"dalat",
+    "stars":"3",
+    "price":"20.99",
+    "img":"./images/villas.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"7",
+    "name":"Tea Resort & Spa",
+    "place":"dalat",
+    "stars":"5",
+    "price":"50.99",
+    "img":"./images/tearesort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"8",
+    "name":"Dragon King Hotel",
+    "place":"dalat",
+    "stars":"3",
+    "price":"15.99",
+    "img":"./images/dragonking.jpg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"9",
+    "name":"Golf Valley",
+    "place":"dalat",
+    "stars":"4",
+    "price":"70.99",
+    "img":"./images/golfvalley.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"10",
+    "name":"Ladalat Hotel",
+    "place":"dalat",
+    "stars":"5",
+    "price":"80.99",
+    "img":"./images/ladalat.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"11",
+    "name":"Luxury Landmark",
+    "place":"hcm",
+    "stars":"5",
+    "price":"100.99",
+    "img":"./images/luxurylandmark.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"12",
+    "name":"Hotel Des Arts",
+    "place":"hcm",
+    "stars":"5",
+    "price":"80.99",
+    "img":"./images/desarts.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"13",
+    "name":"Lotte Legend",
+    "place":"hcm",
+    "stars":"5",
+    "price":"50.99",
+    "img":"./images/lottelengend.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"14",
+    "name":"Eastin Grand",
+    "place":"nhatrang",
+    "stars":"3",
+    "price":"30.99",
+    "img":"./images/eastingrand.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"15",
+    "name":"Hotel Imperial",
+    "place":"nhatrang",
+    "stars":"4",
+    "price":"40.99",
+    "img":"./images/imperial.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"16",
+    "name":"Lucky Sun",
+    "place":"nhatrang",
+    "stars":"4",
+    "price":"15.99",
+    "img":"./images/luckysun.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"17",
+    "name":"Hilton Hotel",
+    "place":"hanoi",
+    "stars":"4",
+    "price":"45.99",
+    "img":"./images/hilton.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"18",
+    "name":"Acoustic Hotel",
+    "place":"hanoi",
+    "stars":"4",
+    "price":"25.99",
+    "img":"./images/acoustic.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"19",
+    "name":"Premium Hotel",
+    "place":"hanoi",
+    "stars":"3",
+    "price":"18.99",
+    "img":"./images/premium.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"20",
+    "name":"Salinda Resort",
+    "place":"phuquoc",
+    "stars":"5",
+    "price":"90.99",
+    "img":"./images/salindaresort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"21",
+    "name":"Pullman Resort",
+    "place":"phuquoc",
+    "stars":"5",
+    "price":"60.99",
+    "img":"./images/pullmanresort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"22",
+    "name":"Mercury Resort",
+    "place":"phuquoc",
+    "stars":"4",
+    "price":"38.99",
+    "img":"./images/mercuryresort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"23",
+    "name":"La Paz Resort",
+    "place":"halong",
+    "stars":"4",
+    "price":"20.99",
+    "img":"./images/lapazresort.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"24",
+    "name":"Holiday Hotel",
+    "place":"halong",
+    "stars":"3",
+    "price":"10.99",
+    "img":"./images/holiday.jpg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"25",
+    "name":"Sunder Land Hotel",
+    "place":"halong",
+    "stars":"3",
+    "price":"13.99",
+    "img":"./images/sunderland.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  },
+  {
+    "id":"26",
+    "name":"Century Hotel",
+    "place":"hue",
+    "stars":"4",
+    "price":"20.99",
+    "img":"./images/century.jpg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"27",
+    "name":"Golden Hotel",
+    "place":"hue",
+    "stars":"4",
+    "price":"22.99",
+    "img":"./images/golden.jpeg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"false"
+  },
+  {
+    "id":"28",
+    "name":"Vinpearl Hotel",
+    "place":"hue",
+    "stars":"5",
+    "price":"40.99",
+    "img":"./images/vinpearl.jpg",
+    "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
+    "sale":"true"
+  }
+]

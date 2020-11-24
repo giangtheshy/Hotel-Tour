@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./src/main.js" type="module" defer></script>
+  <script src="https://kit.fontawesome.com/776bbe23d6.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tour</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-header">
+      <img src="./images/logo-mytour.png" alt="myTour">
+    </div>
+    <div class="nav-header">
+      <ul class="nav-center">
+        <li class="nav-link"><a href="#">Hotel</a></li>
+        <li class="nav-link"><a href="#">Air Ticket</a></li>
+        <li class="nav-link"><a href="#">Special Offers</a></li>
+        <li class="nav-link"><a href="#">Travel Guide</a></li>
+      </ul>
+    </div>
+    <div class="contact-header">
+      <div class="support-phone">
+        <div class="icon-phone-center">
+          <p class="icon-phone"><i class="fas fa-phone-volume"></i></p> <span>24/7</span>
+        </div>
+        <div>
+          <div><span class="bold">Ha Noi : </span><span class="clr-gray">024 7109 9999</span></div>
+          <div><span class="bold">TP. HCM : </span><span class="clr-gray"> 028 7109 9998</span></div>
+        </div>
+      </div>
+      <div class="hotline">
+        <span>Support Booking Air Ticket</span>
+        <span class="clr-gray">1900 2083</span>
+      </div>
+
+    </div>
+    <div class="user-header">
+      <div class="messenger-icon">
+        <span class="icon-container"><i class="far fa-comments"></i></i><span class="subtitle-icon">2</span></span>
+
+      </div>
+      <div class="notification-icon">
+        <span class="icon-container"><i class="far fa-bell"></i><span class="subtitle-icon">1</span></span>
+      </div>
+      <div class="user-icon">
+        <span><i class="far fa-user"></i><i class="fas fa-chevron-down"></i></span>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="banner">
+    <div class="booking">
+      <div class="select-kind">
+        <button class="hotel-btn active"><i class="fas fa-hotel"></i>Hotel</button>
+        <button class="air-ticket-btn"><i class="fas fa-plane"></i>Air Ticket</button>
+      </div>
+      <div class="form-input-hotel">
+        <form action="">
+          <div class="input">
+            <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off">
+            <div class="input-box">
+              <h4 class="title">Điểm đến phổ biến</h4>
+              <div class="place">
+                <ul>
+                  <li>Da Nang</li>
+                  <li>Da Lat</li>
+                  <li>Ho Chi Minh</li>
+                  <li>Nha Trang</li>
+                </ul>
+                <ul>
+                  <li>Ha Noi</li>
+                  <li>Phu Quoc</li>
+                  <li>Ha Long</li>
+                  <li>Hue</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="date-center">
+            <input type="date" name="start-day" id="start-day" value="2018-02-28">
+            <input type="date" name="end-day" id="end-day">
+          </div>
+          <button class="amount-person"><i class="fas fa-key"></i> 1 Room <i class="fas fa-user-friends"></i> 1
+            Person</button>
+          <button class="find-hotel">Find Hotel</button>
+        </form>
+      </div>
+    </div>
+    <div class="slide-show">
+      <div class="slide-animation">
+        <img class="img-slide slide-first" src="./images/slide-show-1.jpg" alt="slide-show" data-id="1">
+        <img class="img-slide" src="./images/slide-show-2.jpg" alt="slide-show" data-id="2">
+        <img class="img-slide" src="./images/slide-show-3.jpg" alt="slide-show" data-id="3">
+        <img class="img-slide" src="./images/slide-show-4.jpg" alt="slide-show" data-id="4">
+        <img class="img-slide" src="./images/slide-show-5.jpg" alt="slide-show" data-id="5">
+        <img class="img-slide" src="./images/slide-show-6.jpg" alt="slide-show" data-id="6">
+        <img class="img-slide" src="./images/slide-show-7.jpg" alt="slide-show" data-id="7">
+        <button class="btn-slide btn-prev" id="btn-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="btn-slide btn-next" id="btn-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="button-container">
+        <span class="btn-select-slide slide-top" data-id="1"></span>
+        <span class="btn-select-slide slide-top" data-id="2"></span>
+        <span class="btn-select-slide slide-top" data-id="3"></span>
+        <span class="btn-select-slide slide-top" data-id="4"></span>
+        <span class="btn-select-slide slide-top" data-id="5"></span>
+        <span class="btn-select-slide slide-top" data-id="6"></span>
+        <span class="btn-select-slide slide-top" data-id="7"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="place-popular">
+
+    <div class="place-header">
+      <h3>VIET NAM POPULATION DESTINATION</h3>
+    </div>
+    <div class="place-container">
+
+      <div class="destination">
+        <div class="img-container">
+          <img src="./images/danang.jpg" alt="da nang">
+          <div class="destination-name">
+            <h3>Da Nang</h3>
+          </div>
+          <div class="find-destination">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="destination">
+        <div class="img-container">
+          <img src="./images/danang.jpg" alt="da nang">
+          <div class="destination-name">
+            <h3>Da Nang</h3>
+          </div>
+          <div class="find-destination">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="destination">
+        <div class="img-container">
+          <img src="./images/danang.jpg" alt="da nang">
+          <div class="destination-name">
+            <h3>Da Nang</h3>
+          </div>
+          <div class="find-destination">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <div class="service-center">
+    <div class="slide-show">
+      <div class="slide-animation">
+        <img class="img-slide slide-bot slide-first" src="./images/slide-show-1.jpg" alt="slide-show" data-id="1">
+        <img class="img-slide slide-bot " src="./images/slide-show-2.jpg" alt="slide-show" data-id="2">
+        <img class="img-slide slide-bot " src="./images/slide-show-3.jpg" alt="slide-show" data-id="3">
+        <img class="img-slide slide-bot " src="./images/slide-show-4.jpg" alt="slide-show" data-id="4">
+        <img class="img-slide slide-bot " src="./images/slide-show-5.jpg" alt="slide-show" data-id="5">
+        <img class="img-slide slide-bot " src="./images/slide-show-6.jpg" alt="slide-show" data-id="6">
+        <img class="img-slide slide-bot " src="./images/slide-show-7.jpg" alt="slide-show" data-id="7">
+        <button class="btn-slide btn-prev" id="btn-prev-bot"><i class="fas fa-chevron-left"></i></button>
+        <button class="btn-slide btn-next" id="btn-next-bot"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="button-container">
+        <span class="btn-select-slide slide-bottom" data-id="1"></span>
+        <span class="btn-select-slide slide-bottom" data-id="2"></span>
+        <span class="btn-select-slide slide-bottom" data-id="3"></span>
+        <span class="btn-select-slide slide-bottom" data-id="4"></span>
+        <span class="btn-select-slide slide-bottom" data-id="5"></span>
+        <span class="btn-select-slide slide-bottom" data-id="6"></span>
+        <span class="btn-select-slide slide-bottom" data-id="7"></span>
+      </div>
+    </div>
+    <div class="service">
+      <div>
+        <img src="./images/logo-why-mytour.png" alt="logo why tour">
+      </div>
+      <ul class="list-service">
+        <li><i class="fas fa-check-circle"></i> <span class="bold"> Giá tốt hơn</span>so với đặt phòng trực tiếp tại
+          khách sạn</li>
+        <li><i class="fas fa-check-circle"></i> Đảm bảo <span class="bold"> giá tốt nhất</span></li>
+        <li><i class="fas fa-check-circle"></i> Đảm bảo <span class="bold">hoàn tiền </span></li>
+        <li><i class="fas fa-check-circle"></i> Nhân viên chăm sóc, tư vấn nhiều kinh nghiệm</li>
+        <li><i class="fas fa-check-circle"></i> Hơn <span class="bold">5000 </span>khách sạn tại Việt Nam với đánh giá
+          thực</li>
+        <li><i class="fas fa-check-circle"></i>Nhiều chương trình khuyến mãi và tích lũy điểm</li>
+        <li><i class="fas fa-check-circle"></i> Thanh toán <span class="bold">dễ dàng, đa dạng</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div class="left-col">
+
+      <img class="logo-footer" src="./images/logo-mytour.png" alt="logo">
+
+      <div class="paragraph bold">Công ty TNHH Mytour Việt Nam</div>
+      <p>Hà Nội: 024 7109 9999</p>
+      <p>Hồ Chí Minh: 028 7109 9998</p>
+      <p>Email: admin@mytour.vn</p>
+      <p>Văn phòng Hà Nội: Tầng 11, Tòa Peakview, 36 Hoàng Cầu, Đống Đa</p>
+      <p>Văn phòng HCM: Tầng 6, Tòa Nhà Central Park, 117 Nguyễn Du, Q.1</p>
+      <div class="paragraph">
+        <p>Số ĐKKD: 0105983269 cấp ngày 30/08/2012</p>
+        <p>Nơi cấp: Sở kế hoạch và đầu tư thành phố Hà Nội</p>
+        <p>Lĩnh vực kinh doanh: Đại lý du lịch</p>
+        <p>Địa chỉ tên miền: Mytour.vn</p>
+      </div>
+      <div class="paragraph">
+        <p>Tài khoản ngân hàng số: 19027493250015</p>
+        <p>Techcombank Chi nhánh Hội Sở</p>
+        <p>Chủ tài khoản: Công ty TNHH Mytour Việt Nam</p>
+      </div>
+    </div>
+    <div class="center-col">
+      <div class="paragraph bold">QUY ĐỊNH DÀNH CHO WEBSITE TMĐT BÁN HÀNG –
+        DỊCH VỤ ĐẶT PHÒNG</div>
+      <p>Chính sách và quy định chung</p>
+      <p>Quy định về thanh toán</p>
+      <p>Quy định về xác nhận thông tin đặt phòng</p>
+      <p>Chính sách về hủy đặt phòng và hoàn trả tiền</p>
+      <p>Chính sách bảo mật thông tin</p>
+      <img src="./images/logo-dathongbao-bocongthuong-w165.png" alt="bo cong thuong">
+      <div class="paragraph bold">QUY ĐỊNH CHO SÀN GDTMĐT - DỊCH VỤ ĐẶT PHÒNG VÀ DỊCH VỤ ĐẶT TOUR DU LỊCH</div>
+      <p>Quy chế hoạt động</p>
+      <p>Chính sách bảo mật</p>
+      <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+      <img src="./images/logo-congthuong-w165.png" alt="bo cong thuong">
+
+    </div>
+    <div class="right-col">
+      <div class="paragraph bold">KHÁCH SẠN TẠI VIỆT NAM</div>
+      <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Khách sạn theo khu vực</p>
+      <p class="paragraph bold">Khách hàng và đối tác</p>
+      <p>Tích lũy Vpoint</p>
+      <p>Đăng nhập HMS</p>
+      <p>Tuyển dụng</p>
+      <p>Liên hệ</p>
+      <div class="paragrap bold">TẢI MOBILE APP: MYTOUR.VN</div>
+      <div class="paragrap logo-container">
+        <img src="./images/btn-app-apple.png" alt="apple">
+        <img src="./images/btn-app-android.png" alt="android">
+      </div>
+      <div class="paragraph bold">KẾT NỐI VỚI MYTOUR.VN</div>
+      <div class="icon-container"><span><i class="fab fa-facebook-square"></i></span><span><i
+            class="fab fa-google-plus-square"></i></span><span><i class="fab fa-instagram-square"></i></span></div>
+    </div>
+  </footer>
+
+
+
+
+
+
+</body>
+
+</html>
