@@ -18,3 +18,28 @@ export function displayPlace(places,container){
   })
   container.innerHTML = result;
 }
+export function displayPlaceListInput(places,container){
+  places.forEach(place => {
+    const li = document.createElement('li')
+    li.classList.add('place-list');
+    li.setAttribute('data-id',`${place.title}`);
+    li.textContent = `${place.name}`;
+    container.appendChild(li);
+  })
+}
+
+export function displayHotelInput(hotels,container){
+  let result = "";
+  hotels.forEach(hotel => {
+    
+    result+= `<li class="hotel-list" data-id=${hotel.place}><div class="hotel-name">${hotel.name}</div><div class="stars">${printStars(hotel.stars)}</div><div class="price">$${hotel.price}</div></li>`
+  })
+  container.innerHTML=result;
+}
+function printStars(num){
+  let result = ``;
+  for (let i =0 ; i<num ; i++){
+    result += `<i class="fas fa-star"></i>`;
+  }
+  return result;
+}

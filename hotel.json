@@ -6,8 +6,24 @@
     "stars":"5",
     "price":"70.99",
     "img":"./images/novotel.jpeg",
+   
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"2",
@@ -16,8 +32,23 @@
     "stars":"4",
     "price":"20.99",
     "img":"./images/whitesand.jpg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":false,
+      "event":false,
+      "carrental":false
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"3",
@@ -26,8 +57,23 @@
     "stars":"5",
     "price":"75.99",
     "img":"./images/sheratonresort.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"4",
@@ -36,8 +82,23 @@
     "stars":"5",
     "price":"300.99",
     "img":"./images/peninsularesort.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":true,
+      "event":true,
+      "carrental":false
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"5",
@@ -46,8 +107,23 @@
     "stars":"3",
     "price":"20.99",
     "img":"./images/altara.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":false,
+      "event":false,
+      "carrental":false
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"6",
@@ -56,8 +132,23 @@
     "stars":"3",
     "price":"20.99",
     "img":"./images/villas.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":false
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"7",
@@ -66,18 +157,48 @@
     "stars":"5",
     "price":"50.99",
     "img":"./images/tearesort.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"8",
     "name":"Dragon King Hotel",
     "place":"dalat",
-    "stars":"3",
+    "stars":"2",
     "price":"15.99",
     "img":"./images/dragonking.jpg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"9",
@@ -86,8 +207,23 @@
     "stars":"4",
     "price":"70.99",
     "img":"./images/golfvalley.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"10",
@@ -96,8 +232,23 @@
     "stars":"5",
     "price":"80.99",
     "img":"./images/ladalat.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"11",
@@ -106,8 +257,23 @@
     "stars":"5",
     "price":"100.99",
     "img":"./images/luxurylandmark.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"12",
@@ -116,8 +282,23 @@
     "stars":"5",
     "price":"80.99",
     "img":"./images/desarts.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":false,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"13",
@@ -126,8 +307,23 @@
     "stars":"5",
     "price":"50.99",
     "img":"./images/lottelengend.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"14",
@@ -136,8 +332,23 @@
     "stars":"3",
     "price":"30.99",
     "img":"./images/eastingrand.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"15",
@@ -146,18 +357,48 @@
     "stars":"4",
     "price":"40.99",
     "img":"./images/imperial.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"16",
     "name":"Lucky Sun",
     "place":"nhatrang",
-    "stars":"4",
+    "stars":"1",
     "price":"15.99",
     "img":"./images/luckysun.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":false,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"17",
@@ -166,28 +407,73 @@
     "stars":"4",
     "price":"45.99",
     "img":"./images/hilton.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"18",
     "name":"Acoustic Hotel",
     "place":"hanoi",
-    "stars":"4",
+    "stars":"3",
     "price":"25.99",
     "img":"./images/acoustic.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"19",
     "name":"Premium Hotel",
     "place":"hanoi",
-    "stars":"3",
+    "stars":"2",
     "price":"18.99",
     "img":"./images/premium.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"20",
@@ -196,8 +482,23 @@
     "stars":"5",
     "price":"90.99",
     "img":"./images/salindaresort.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"21",
@@ -206,8 +507,23 @@
     "stars":"5",
     "price":"60.99",
     "img":"./images/pullmanresort.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"22",
@@ -216,8 +532,23 @@
     "stars":"4",
     "price":"38.99",
     "img":"./images/mercuryresort.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"23",
@@ -226,28 +557,73 @@
     "stars":"4",
     "price":"20.99",
     "img":"./images/lapazresort.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"24",
     "name":"Holiday Hotel",
     "place":"halong",
-    "stars":"3",
+    "stars":"1",
     "price":"10.99",
     "img":"./images/holiday.jpg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":false,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"25",
     "name":"Sunder Land Hotel",
     "place":"halong",
-    "stars":"3",
+    "stars":"2",
     "price":"13.99",
     "img":"./images/sunderland.jpeg",
+    "service":{
+      "parking":false,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   },
   {
     "id":"26",
@@ -256,8 +632,23 @@
     "stars":"4",
     "price":"20.99",
     "img":"./images/century.jpg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":false,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":true,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"27",
@@ -266,8 +657,23 @@
     "stars":"4",
     "price":"22.99",
     "img":"./images/golden.jpeg",
+    "service":{
+      "parking":true,
+      "meeting":true,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":false,
+      "gym":false,
+      "event":false,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"false"
+    "sale": false
   },
   {
     "id":"28",
@@ -276,7 +682,22 @@
     "stars":"5",
     "price":"40.99",
     "img":"./images/vinpearl.jpg",
+    "service":{
+      "parking":true,
+      "meeting":false,
+      "elevator":true,
+      "wifi":true,
+      "laundry":true,
+      "restaurant":true,
+      "receptionist":true,
+      "shuttle":true,
+      "gym":false,
+      "event":true,
+      "carrental":true
+
+    },
+    "address":" 165C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu ",
     "desc":"Khách Sạn Sài Gòn Hạ Long có thiết kế sang trọng, nội thất cùng trang thiết bị hiện đại. Nhiều tiện nghi như hồ bơi, Massage & spa,",
-    "sale":"true"
+    "sale": true
   }
 ]

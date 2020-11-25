@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="../css/hotel.css">
+ 
+  <script src="./js/hotel.js" type="module" defer></script>
+  <script src="https://kit.fontawesome.com/776bbe23d6.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+  <title>Hotel</title>
+</head>
+
+<body>
+
+
+  <header>
+    <div class="logo-header">
+      <img src="../images/logo-mytour.png" alt="myTour">
+    </div>
+    <div class="nav-header">
+      <ul class="nav-center">
+        <li class="nav-link"><a href="#">Hotel</a></li>
+        <li class="nav-link"><a href="#">Air Ticket</a></li>
+        <li class="nav-link"><a href="#">Special Offers</a></li>
+        <li class="nav-link"><a href="#">Travel Guide</a></li>
+      </ul>
+    </div>
+    <div class="contact-header">
+      <div class="support-phone">
+        <div class="icon-phone-center">
+          <p class="icon-phone"><i class="fas fa-phone-volume"></i></p> <span>24/7</span>
+        </div>
+        <div>
+          <div><span class="bold">Ha Noi : </span><span class="clr-gray">024 7109 9999</span></div>
+          <div><span class="bold">TP. HCM : </span><span class="clr-gray"> 028 7109 9998</span></div>
+        </div>
+      </div>
+      <div class="hotline">
+        <span>Support Booking Air Ticket</span>
+        <span class="clr-gray">1900 2083</span>
+      </div>
+
+    </div>
+    <div class="user-header">
+      <div class="messenger-icon">
+        <span class="icon-container"><i class="far fa-comments"></i></i><span class="subtitle-icon">2</span></span>
+
+      </div>
+      <div class="notification-icon">
+        <span class="icon-container"><i class="far fa-bell"></i><span class="subtitle-icon">1</span></span>
+      </div>
+      <div class="user-icon">
+        <span><i class="far fa-user"></i><i class="fas fa-chevron-down"></i></span>
+      </div>
+    </div>
+
+  </header>
+
+
+  <div class="booking">
+    <div class="form-input-hotel">
+      <div class="form">
+        <div class="input">
+          <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off">
+          <div class="input-box">
+            <h4 class="title">Điểm đến phổ biến</h4>
+            <div class="place">
+              <ul class="places-list">
+                <!-- place List -->
+              </ul>
+            </div>
+          </div>
+          <div class="input-box-enter">
+            <h4 class="title">Hotel</h4>
+            <div class="hotel">
+              <ul class="hotels-list">
+                <!-- hotel List -->
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="date-center">
+          <input type="date" name="start-day" id="start-day" title="Click icon Calendar to set start day">
+          <input type="date" name="end-day" id="end-day" title="Click icon Calendar to set end day">
+        </div>
+        <button class="amount-person" title="Click to set Room"><i class="fas fa-key"></i> <span
+            class="number-amount number-room">1</span> Room <i class="fas fa-user-friends"></i> <span
+            class="number-amount number-customer">1</span>
+          Person <i class="fas fa-times"></i></button>
+        <div class="number-box ">
+          <div class="room">
+            <button class="button-amount decrease-room"><i class="fas fa-minus"></i></button>
+            <div class="text"><span class="number-amount number-room">1</span> Room</div>
+            <button class="button-amount increase-room"><i class="fas fa-plus"></i></button>
+          </div>
+          <div class="customer">
+            <button class="button-amount decrease-customer"><i class="fas fa-minus"></i></button>
+            <div class="text"><span class="number-amount number-customer">1</span> Customer</div>
+            <button class="button-amount increase-customer"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <button class="find-hotel" title="Click to find the best Hotel">Find Hotel</button>
+      </div>
+    </div>
+  </div>
+  <button class="open-filter-bar"><i class="fas fa-bars"></i></button>
+  <div class="filter-container ">
+    <div class="filter-bar ">
+      <div class="filter-box">
+        <div class="display-number-of-hotel">
+          <div class="number-of-hotel">
+            There are <span class="bold">10 hotels</span>
+          </div>
+          <button class="clear-all-filter">Clear All Filter</button>
+        </div>
+        <div class="filter-allow-name">
+          <label for="filter-allow-name" class="bold">Filter Allow Name</label>
+          <input type="text" name="filter allow name" id="filter-allow-name" placeholder="Enter Hotel Name ...">
+        </div>
+        <div class="filter-allow-price ">
+          <div class="header-price bold">Filter Allow Price</div>
+          <div class="value-min-max"><span class="value-min">0.99</span><span class="value-max">222.99</span></div>
+          <input type="range" name="filter-allow-price" min="1" max="100" value="1"  class="range-input-price">
+          <div class="value-range">$333</div>
+          <label class="container-checkbox">Special Offers<input type="checkbox" name="sale" id="hotel-sale" value="Sale"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">None Special Offers<input type="checkbox" name="sale" id="hotel-none-sale" value="NoneSales"/> <span class="checkmark"></span>
+          </label>
+
+        </div>
+        <div class="filter-allow-stars">
+          <div class="bold">Stars Rank</div>
+          <label class="container-checkbox"><i class="fas fa-star"></i>
+            <input type="checkbox" name="1stars" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox"><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <input type="checkbox" name="1stars" value="2">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <input type="checkbox" name="1stars" value="3">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <input type="checkbox" name="1stars" value="4">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <input type="checkbox" name="1stars" value="5">
+            <span class="checkmark"></span>
+          </label>
+          
+
+        </div>
+        <div class="filter-allow-type">
+          <div class="bold"> Type</div>
+          <label class="container-ratio">All
+            <input type="radio" name="hotel" value="all">
+            <span class="checkmark-ratio"></span>
+          </label>
+          <label class="container-ratio">Hotel
+            <input type="radio" name="hotel" value="hotel">
+            <span class="checkmark-ratio"></span>
+          </label>
+          <label class="container-ratio">Resort
+            <input type="radio" name="hotel" value="resort">
+            <span class="checkmark-ratio"></span>
+          </label>
+          <label class="container-ratio">Spa
+            <input type="radio" name="hotel" value="spa">
+            <span class="checkmark-ratio"></span>
+          </label>
+         
+        </div>
+        <div class="filter-allow-service">
+          <div class="bold">Services</div>
+          <label class="container-checkbox">Parking<input type="checkbox" name="service" class="service" value="parking"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Meeting<input type="checkbox" name="service" class="service" value="meeting"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Elevator<input type="checkbox" name="service" class="service" value="elevator"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Wifi Free<input type="checkbox" name="service" class="service" value="wifi"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Laundry<input type="checkbox" name="service" class="service" value="Laundry"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Restaurant<input type="checkbox" name="service" class="service" value="restaurant"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Receptionist<input type="checkbox" name="service" class="service" value="receptionist"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Shuttle Car<input type="checkbox" name="service" class="service" value="shuttle"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Gym<input type="checkbox" name="service" class="service" value="gym"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Event<input type="checkbox" name="service" class="service" value="event"/> <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Car Rental<input type="checkbox" name="service" class="service" value="carrental"/> <span class="checkmark"></span>
+          </label>
+          
+          
+        
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<section class="hotels-center">
+  <div class="sorting">
+    <button class="services">Services</button>
+    <button class="rank-stars">Rank Stars</button>
+    <button class="sort-price">Price</button>
+  </div>
+  <div class="hotels-container">
+    <div class="hotel-container">
+      <div class="hotel-header">
+        <div class="hotel-header-left">
+          <h2 class="hotel-title">Marina Bay Vung Tau Resort & Spa</h2>
+          <div class="number-stars"><i class="fas fa-star"></i></div>
+
+        </div>
+        <div class="hotel-address">
+          <i class="fas fa-map-marker-alt"></i> Trần Phú, Phường 5, Vũng Tàu, Bà Rịa - Vũng Tàu 
+        </div>
+        <div class="hotel-header-right">
+          <div class="sale-box">
+            Sale 36%
+          </div>
+        </div>
+
+      </div>
+      <div class="hotel-center">
+        <div class="hotel-img">
+          <img src="../images/altara.jpg" alt="altara">
+        </div>
+        <div class="hotel-body">
+          <div class="service-icons">
+            <i class="fas fa-parking"></i><i class="far fa-handshake"></i><i class="far fa-caret-square-left"></i><i class="fas fa-wifi"></i><i class="fas fa-hands-wash"></i><i class="fas fa-utensils"></i><i class="fas fa-people-arrows"></i><i class="fas fa-shuttle-van"></i><i class="fas fa-dumbbell"></i><i class="fas fa-calendar-week"></i><i class="fas fa-motorcycle"></i>
+          </div>
+          <div class="hotel-desc">
+            Giờ đây du khách đã có một điểm đến hấp dẫn nằm ngay bờ biển phía nam của Việt Nam. Tiền sảnh ngập tràn ánh sáng, pha trộn giữa phong cách đương đại và bản sắc châu Á,
+          </div>
+          <div class="hotel-pay">
+            <div class="hotel-price">
+              <div class="old-price">$55.99</div>
+              <div class="new-price">$33.99</div>
+            </div>
+            <div class="view-room">
+              <button class="view-room-btn">View Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+
+</html>

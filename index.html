@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./src/main.js" type="module" defer></script>
   <script src="https://kit.fontawesome.com/776bbe23d6.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Tour</title>
 </head>
@@ -62,36 +63,48 @@
         <button class="air-ticket-btn"><i class="fas fa-plane"></i>Air Ticket</button>
       </div>
       <div class="form-input-hotel">
-        <form action="">
+        <div class="form">
           <div class="input">
             <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off">
             <div class="input-box">
               <h4 class="title">Điểm đến phổ biến</h4>
               <div class="place">
-                <ul>
-                  <li>Da Nang</li>
-                  <li>Da Lat</li>
-                  <li>Ho Chi Minh</li>
-                  <li>Nha Trang</li>
+                <ul class="places-list">
+                  <!-- place List -->
                 </ul>
-                <ul>
-                  <li>Ha Noi</li>
-                  <li>Phu Quoc</li>
-                  <li>Ha Long</li>
-                  <li>Hue</li>
+              </div>
+            </div>
+            <div class="input-box-enter">  
+              <h4 class="title">Hotel</h4>     
+              <div class="hotel">
+                <ul class="hotels-list">
+                  <!-- hotel List -->
+                  
                 </ul>
               </div>
             </div>
           </div>
 
           <div class="date-center">
-            <input type="date" name="start-day" id="start-day" value="2018-02-28">
-            <input type="date" name="end-day" id="end-day">
+            <input type="date" name="start-day" id="start-day" title="Click icon Calendar to set start day" >
+            <input type="date" name="end-day" id="end-day" title="Click icon Calendar to set end day">
           </div>
-          <button class="amount-person"><i class="fas fa-key"></i> 1 Room <i class="fas fa-user-friends"></i> 1
-            Person</button>
-          <button class="find-hotel">Find Hotel</button>
-        </form>
+          <button class="amount-person" title="Click to set Room"><i class="fas fa-key"></i> <span class="number-amount number-room">1</span> Room <i class="fas fa-user-friends"></i> <span class="number-amount number-customer">1</span>
+            Person <i class="fas fa-times"></i></button>
+            <div class="number-box ">
+              <div class="room">
+                <button class="button-amount decrease-room"><i class="fas fa-minus"></i></button>
+                <div class="text"><span class="number-amount number-room">1</span> Room</div>
+                <button class="button-amount increase-room"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="customer">
+                <button class="button-amount decrease-customer"><i class="fas fa-minus"></i></button>
+                <div class="text"><span class="number-amount number-customer">1</span> Customer</div>
+                <button class="button-amount increase-customer"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          <button class="find-hotel" title="Click to find the best Hotel">Find Hotel</button>
+        </div>
       </div>
     </div>
     <div class="slide-show">
@@ -124,42 +137,7 @@
       <h3>VIET NAM POPULATION DESTINATION</h3>
     </div>
     <div class="place-container">
-
-      <div class="destination">
-        <div class="img-container">
-          <img src="./images/danang.jpg" alt="da nang">
-          <div class="destination-name">
-            <h3>Da Nang</h3>
-          </div>
-          <div class="find-destination">
-            <button><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="destination">
-        <div class="img-container">
-          <img src="./images/danang.jpg" alt="da nang">
-          <div class="destination-name">
-            <h3>Da Nang</h3>
-          </div>
-          <div class="find-destination">
-            <button><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="destination">
-        <div class="img-container">
-          <img src="./images/danang.jpg" alt="da nang">
-          <div class="destination-name">
-            <h3>Da Nang</h3>
-          </div>
-          <div class="find-destination">
-            <button><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-
-
+      <!-- Destination -->
     </div>
   </section>
 
