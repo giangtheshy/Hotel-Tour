@@ -17,7 +17,9 @@ import {
   filterHotelAllowValue
 } from './filter/search-hotel.js'
 import {
-  saveLocalStorage
+  saveLocalStorage,
+  removeLocalStorage,
+  addLocalStorage
 } from './localstorage/localstorage.js'
 import {
   displayAmount,
@@ -51,19 +53,23 @@ export const btnSelectSlideTop = document.querySelectorAll('.btn-select-slide.sl
 export const btnSelectSlideBot = document.querySelectorAll('.btn-select-slide.slide-bottom')
 
 
-async function dataHotel() {
+export async function dataHotel() {
   let url = '../hotel.json';
   let response = await fetch(url);
   let dataHotel = await response.json();
   return dataHotel;
 }
+export async function dataPlace() {
+  let url = '../place.json';
+  let response = await fetch(url);
+  let dataPlace = await response.json();
+  return dataPlace;
+}
 
 
 window.addEventListener("DOMContentLoaded", () => {
 
-  fetch('../place.json')
-    .then(response => response.json())
-    .then(data => {
+  dataPlace().then(data => {
       saveLocalStorage("places", data);
       displayPlace(data, placeContainer);
       displayPlaceListInput(data, placesList);
@@ -78,7 +84,8 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.log(error));
 
-
+  removeLocalStorage("find");
+  findHotelById();
   setInterval(slideShow, 5000);
   setInterval(slideShowBot, 3000);
 })
@@ -168,6 +175,7 @@ function getNameHotel() {
     hotel.addEventListener('click', () => {
       let element = hotel.childNodes[0];
       inputLocation.value = element.innerText;
+      inputLocation.dataset.id = hotel.dataset.id;
       inputBoxEnter.style.display = "none";
       startDay.focus();
       let nowDate = new Date();
@@ -197,4 +205,53 @@ function bookHotelRoom() {
       })
     })
   })
+}
+
+const findHotel = document.querySelector('.find-hotel');
+let flagFindHotel = false;
+
+function findHotelById() {
+  findHotel.addEventListener('click', () => {
+    flagFindHotel = true;
+    const data = getDataFindHotel();
+    if (data.id === "") {
+      alert("Please Enter Hotel !")
+    } else {
+      window.location.assign('http://127.0.0.1:5500/src/hotel.html')
+
+
+      saveLocalStorage("find", flagFindHotel);
+      addLocalStorage("find", data)
+
+    }
+
+
+  })
+
+}
+placeContainer.addEventListener('click', (e) => {
+  let element = e.target;
+  if (element.classList.contains('select-find')) {
+    flagFindHotel = true;
+    let title = {title :element.dataset.id};
+    window.location.assign('http://127.0.0.1:5500/src/hotel.html');
+    saveLocalStorage("find", flagFindHotel);
+    addLocalStorage("find", title)
+
+  }
+})
+const getDataFindHotel = () => {
+  const getIdHotel = inputLocation.dataset.id;
+  const getStartDay = startDay.value;
+  const getEndDay = endDay.value;
+  const getRoom = document.querySelector('.number-room').innerText
+  const getCustomer = document.querySelector('.number-customer').innerText
+  const data = {
+    id: getIdHotel,
+    startDay: getStartDay,
+    endDay: getEndDay,
+    room: getRoom,
+    customer: getCustomer
+  }
+  return data;
 }

@@ -5,7 +5,19 @@ export function getLocalStorage(list){
   return localStorage.getItem(list)?JSON.parse(localStorage.getItem(list)) : [];
 }
 export function saveLocalStorage(list,valueList){
- localStorage.setItem(list,JSON.stringify(valueList));
+  let lists = getLocalStorage(list);
+  if (lists.length===0){
+    lists.push(valueList);
+  }else{
+    lists=valueList;
+  }
+  
+ localStorage.setItem(list,JSON.stringify(lists));
+}
+export function addLocalStorage(list,valueList){
+  let lists = getLocalStorage(list);
+  lists.push(valueList);
+ localStorage.setItem(list,JSON.stringify(lists));
 }
 export function editLocalStorage(list,value){
   let lists = getLocalStorage(list).map(item=>{
@@ -17,4 +29,9 @@ export function editLocalStorage(list,value){
   });
   localStorage.setItem(list,JSON.stringify(lists));
   
+}
+export function removeLocalStorage(list){
+  
+  let lists = [];
+  localStorage.setItem(list,JSON.stringify(lists))
 }
