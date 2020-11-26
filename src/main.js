@@ -217,7 +217,7 @@ function findHotelById() {
     if (data.id === "") {
       alert("Please Enter Hotel !")
     } else {
-      window.location.assign('hotel.html')
+      window.location.href='hotel.html'
 
 
       saveLocalStorage("find", flagFindHotel);
@@ -234,7 +234,7 @@ placeContainer.addEventListener('click', (e) => {
   if (element.classList.contains('select-find')) {
     flagFindHotel = true;
     let title = {title :element.dataset.id};
-    window.location.assign('hotel.html');
+    window.location.href='hotel.html'
     saveLocalStorage("find", flagFindHotel);
     addLocalStorage("find", title)
 
