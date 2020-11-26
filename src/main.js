@@ -230,8 +230,15 @@ function findHotelById() {
 
 }
 placeContainer.addEventListener('click', (e) => {
+  findListHotel(e,'select-find');
+})
+placesList.addEventListener('click',(e)=>{
+  
+  findListHotel(e,"place-list");
+})
+const  findListHotel=(e,classL)=>{
   let element = e.target;
-  if (element.classList.contains('select-find')) {
+  if (element.classList.contains(classL)) {
     flagFindHotel = true;
     let title = {title :element.dataset.id};
     window.location.href='../src/hotel.html'
@@ -239,7 +246,7 @@ placeContainer.addEventListener('click', (e) => {
     addLocalStorage("find", title)
 
   }
-})
+}
 const getDataFindHotel = () => {
   const getIdHotel = inputLocation.dataset.id;
   const getStartDay = startDay.value;
