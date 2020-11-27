@@ -97,23 +97,14 @@ const filterByService = (hotels, input) => {
 
   return hotels.filter(hotel => {
     let flag = true
-    let counter = 0
 
     input.forEach(item => {
-      // if (item.checked === false) {
-      //   counter++
-      // }
+
       if (item.checked === true && hotel.service[item.value] === false) {
         flag = false
       }
-      // if (item.checked === true && hotel.service[item.value] === false) {
-      //   flag = true
-      // }
     })
 
-    // if (counter === input.length) {
-    //   flag = false
-    // }
     return flag
   })
 }
