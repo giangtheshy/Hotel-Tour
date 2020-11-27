@@ -35,3 +35,15 @@ function checkButton(button) {
     countCustomer++;
   }
 }
+
+
+export const displayMinMaxPrice = (hotels,input,min,max)=>{
+  const arrayPrice = hotels.map(hotel=>parseFloat(hotel.price).toFixed(2))
+  const maxValue = Math.max(...arrayPrice)
+  const minValue = Math.min(...arrayPrice)
+  input.min = minValue
+  input.max =maxValue
+  input.value=maxValue
+  min.innerHTML = minValue
+  max.innerHTML = maxValue
+}

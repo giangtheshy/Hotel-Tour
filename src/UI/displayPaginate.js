@@ -23,10 +23,10 @@ const paginate = (hotels) => {
 }
 
 const displayHotels = (container, hotels) => {
-
   let result = "";
   hotels.forEach(hotel => {
-    let randomNum = Math.floor(Math.random() * 40 + 10);
+    
+    
     result += `<div class="hotel-container">
     <div class="hotel-header">
       <div class="hotel-header-left">
@@ -41,7 +41,7 @@ const displayHotels = (container, hotels) => {
 
       <div class="hotel-header-right">
       ${hotel.sale===true?`<div class="sale-box">
-      Sale ${randomNum}%
+      Sale ${hotel.randomNum}%
     </div>`:'<div></div>'}
         
       </div>
@@ -72,7 +72,7 @@ const displayHotels = (container, hotels) => {
         <div class="hotel-pay">
           <div class="hotel-price">
 
-            ${checkSale(hotel.sale,hotel.price,randomNum)}
+            ${checkSale(hotel.sale,hotel.price,hotel.randomNum)}
           </div>
           <div class="view-room">
             <button class="view-room-btn">View Room</button>
@@ -99,11 +99,11 @@ function checkService(bool, icon) {
 function checkSale(bool, price, sale) {
   if (bool === true) {
     return `<div class="old-price">$${price}</div>
-    <div class="new-price">$${(price-price*(sale/100)).toFixed(2)}</div>
+    <div class="new-price">$<span class="get-price">${(price-price*(sale/100)).toFixed(2)}</span></div>
     <div class="note">Early Check-in !</div>`
   } else {
     return `<div class="old-price"></div>
-    <div class="new-price">$${price}</div>
+    <div class="new-price">$<span class="get-price">${price}</span></div>
     <div class="note">Make Sure There's Room !</div>`
   }
 }

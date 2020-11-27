@@ -78,12 +78,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
       dataHotel().then(dataHotel => {
+        dataHotel = dataHotel.map(item=>{
+          let randomNum = Math.floor(Math.random()*40+10)
+          return {...item,randomNum}
+        })
         saveLocalStorage("hotels", dataHotel);
         searchHotel(dataHotel);
       });
     })
     .catch(error => console.log(error));
-
+    
   removeLocalStorage("find");
   findHotelById();
   setInterval(slideShow, 5000);
@@ -143,7 +147,7 @@ function searchHotel(hotels) {
     let listFilter = filterHotelAllowValue(hotels, value);
 
     displayHotelInput(listFilter, hotelList);
-    getNameHotel();
+    getDataInputHotel();
 
   })
   bookHotelRoom();
@@ -170,7 +174,7 @@ amountPerson.addEventListener('click', () => {
   }
 })
 
-function getNameHotel() {
+function getDataInputHotel() {
   hotels.forEach(hotel => {
     hotel.addEventListener('click', () => {
       let element = hotel.childNodes[0];

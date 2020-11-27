@@ -863,15 +863,23 @@ input[type="date"] {
   color:var(--lightblue);
   font-weight: bold;
   font-size: 1.2rem;
-  border-bottom: 3px solid white;
+  
   transition: var(--main-transition);
   cursor: pointer;
 }
-.sorting button:hover{
+
+.services:hover{
   border-bottom:3px solid var(--lightblue);
-  
 }
+.rank-stars:hover{
+  border-bottom:3px solid var(--lightblue);
+}
+.sort-price:hover{
+  border-bottom:3px solid var(--lightblue);
+}
+
 .services{
+  border-bottom: 3px solid white;
   position: relative;
 }
 .sorting-popup{
@@ -908,6 +916,7 @@ input[type="date"] {
   
 }
 .rank-stars{
+  border-bottom: 3px solid white;
   position: relative;
 }
 
@@ -916,6 +925,7 @@ input[type="date"] {
   
 }
 .sort-price{
+  border-bottom: 3px solid white;
   position: relative;
 }
 .sort-price:hover >.sorting-popup{

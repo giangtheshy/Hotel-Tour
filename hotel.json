@@ -80,7 +80,7 @@
     "name":"Peninsula Resort",
     "place":"danang",
     "stars":"5",
-    "price":"300.99",
+    "price":"140.99",
     "img":"./images/peninsularesort.jpeg",
     "service":{
       "parking":false,
