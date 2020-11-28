@@ -17,7 +17,7 @@ export const sortIncreaseByPrice = (hotels)=>{
     
   })
   newHotels.forEach(hotel => {
-    console.log(hotel.price);
+    
   })
   return newHotels;
 }

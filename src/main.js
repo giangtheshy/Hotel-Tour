@@ -14,18 +14,13 @@ import {
   displayHotelInput
 } from './UI/display-place.js'
 import {
-  filterHotelAllowValue
+  filterHotelAllowValue,inputLocationFunc,bookHotelRoom,flagBlockInputBox
 } from './filter/search-hotel.js'
 import {
   saveLocalStorage,
   removeLocalStorage,
   addLocalStorage
 } from './localstorage/localstorage.js'
-import {
-  displayAmount,
-  changeNumber,
-  setUpDefaultCounter
-} from './UI/display-amount.js'
 
 
 
@@ -115,8 +110,9 @@ btnSelectSlideBot.forEach(btn => {
   })
 })
 
-let flagBlockInputBox = false;
+
 inputContainer.addEventListener('mousemove', () => {
+  console.log(flagBlockInputBox);
   if (flagBlockInputBox) {
     inputBox.style.display = "block";
   }
@@ -130,27 +126,11 @@ inputContainer.addEventListener('mouseout', () => {
 
 })
 
+ const listHandleInput = {inputLocation,inputBox,inputBoxEnter,hotelList}
 function searchHotel(hotels) {
 
-  inputLocation.addEventListener('input', () => {
-
-    let value = inputLocation.value;
-    if (value != "") {
-      flagBlockInputBox = false;
-      inputBox.style.display = "none";
-      inputBoxEnter.style.display = "block";
-    } else {
-      flagBlockInputBox = true;
-      inputBox.style.display = "block";
-      inputBoxEnter.style.display = "none";
-    }
-    let listFilter = filterHotelAllowValue(hotels, value);
-
-    displayHotelInput(listFilter, hotelList);
-    getDataInputHotel();
-
-  })
-  bookHotelRoom();
+  inputLocationFunc(hotels,listHandleInput,listGetDataInputHotel)
+  bookHotelRoom(buttonAmount,numberAmount);
 }
 
 
@@ -174,42 +154,9 @@ amountPerson.addEventListener('click', () => {
   }
 })
 
-function getDataInputHotel() {
-  hotels.forEach(hotel => {
-    hotel.addEventListener('click', () => {
-      let element = hotel.childNodes[0];
-      inputLocation.value = element.innerText;
-      inputLocation.dataset.id = hotel.dataset.id;
-      inputBoxEnter.style.display = "none";
-      startDay.focus();
-      let nowDate = new Date();
-      let nowDay = nowDate.getDate();
-      let nowMonth = nowDate.getMonth();
-      let nowYear = nowDate.getFullYear();
-      startDay.value = `${nowYear}-${nowMonth+1}-${nowDay}`;
-      endDay.value = `${nowYear}-${nowMonth+1}-${nowDay+3}`;
-      closeIcon.classList.add('show');
-      numberBox.classList.add('show');
-    })
-  })
-  setUpDefaultCounter();
-  numberAmount.forEach(number => {
-    displayAmount(number);
-  })
+const listGetDataInputHotel = {hotels,inputLocation,inputBoxEnter,startDay,endDay,closeIcon,numberBox,numberAmount}
 
-}
 
-function bookHotelRoom() {
-  buttonAmount.forEach(button => {
-    button.addEventListener('click', e => {
-      let btn = e.currentTarget;
-      changeNumber(btn);
-      numberAmount.forEach(number => {
-        displayAmount(number);
-      })
-    })
-  })
-}
 
 const findHotel = document.querySelector('.find-hotel');
 let flagFindHotel = false;

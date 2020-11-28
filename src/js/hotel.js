@@ -1,5 +1,5 @@
 import {
-  getLocalStorage,removeLocalStorage
+  getLocalStorage,removeLocalStorage,saveLocalStorage
 } from '../localstorage/localstorage.js'
 import {
   paginate,
@@ -13,6 +13,7 @@ import  {sortingByFunction} from '../sorting/sortByService.js'
 import {filterAllowSelected,clearFilter} from '../filter/filterHotel.js'
 import {displayMinMaxPrice} from '../UI/display-amount.js'
 
+import {displayPlaceListInput,displayHotelInput} from '../UI/display-place.js'
 
 const filterOverlay = document.querySelector('.filter-container')
 const filterBar = document.querySelector('.filter-bar')
@@ -25,33 +26,35 @@ const hotelsContainer = document.querySelector('.hotels-container')
 
 let index = 0;
 let page = [];
-
+let hotelsOriginal;
 window.addEventListener('DOMContentLoaded', () => {
 
-  let hotels;
+  
   if (flagFind===true){
-    hotels=getHotelFromLocal();
-    setTimeout(setDefaultFind,1000);
+    hotelsOriginal=getHotelFromLocal();
+    saveLocalStorage("find",hotelsOriginal);
+    
   }else{
-    hotels = getLocalStorage("hotels")
+    hotelsOriginal = getLocalStorage("hotels")
   }
   
+ 
   
-  loadPage(hotels);
+  loadPage(hotelsOriginal);
   eventButtonPage();
   eventOverlayFilter();
-  sortingByFunction(hotels);
-  
+  sortingByFunction();
 })
 
-const setDefaultFind=()=>{
-  removeLocalStorage("find");
-}
 
+
+let filterNewHotel ;
 function eventOverlayFilter() {
   let hotels = getLocalStorage("hotels")
   openFilterOverlay.addEventListener('click', () => {
-    filterBarEvent(hotels);
+     filterNewHotel=filterBarEvent(hotels);
+     
+    
     filterOverlay.classList.add('show-container')
     filterBar.classList.add('show-bar')
     document.addEventListener('click', (e) => {
@@ -82,6 +85,7 @@ export const loadPage = (hotels)=>{
   }else{
     hotelsContainer.innerHTML="";
   }
+  totalHotels.innerHTML = `${hotels.length}`
   
 }
 
@@ -135,9 +139,8 @@ export const filterCollection = {inputFilterAllowName,inputRangePrice,checkedSal
 const filterBarEvent = (hotels)=>{
   displayMinMaxPrice(hotels,inputRangePrice,valueMinRange,valueMaxRange);
   valueOfInputRange.innerText = inputRangePrice.max
-  let newHotels;
-  newHotels=filterAllowSelected(hotels,filterCollection);
-
+  filterAllowSelected(hotels,filterCollection)
+  
 }
 
 
@@ -145,8 +148,13 @@ const valueMinRange = document.querySelector('.value-min')
 const valueMaxRange = document.querySelector('.value-max')
 const valueOfInputRange = document.querySelector('.value-range')
 const clearAllFilters = document.querySelector('.clear-all-filter')
+const totalHotels = document.querySelector('.total-hotels')
+
+
+
 
 clearAllFilters.addEventListener('click', () => {
+  
   clearFilter(filterCollection)
 })
 inputRangePrice.addEventListener('input',()=>{

@@ -4,10 +4,11 @@ import {
 import {
   loadPage
 } from '../js/hotel.js'
-import {getLocalStorage} from '../localstorage/localstorage.js'
+import {getLocalStorage,saveLocalStorage} from '../localstorage/localstorage.js'
 const filterAllowSelected = (hotels, collection) => {
   let newHotels;
-  document.addEventListener('input', () => {
+   document.addEventListener('input', () => {
+    // window.location = './hotel.html'
     newHotels = filterHotelAllowValue(hotels, collection.inputFilterAllowName.value)
 
     newHotels = filterByPrice(newHotels, collection.inputRangePrice.value)
@@ -15,13 +16,17 @@ const filterAllowSelected = (hotels, collection) => {
     newHotels = filterByStar(newHotels, collection.selectStars)
     newHotels = filterByType(newHotels, collection.selectTypeHotel)
     newHotels = filterByService(newHotels, collection.checkedService)
+    // newH= newHotels;
     loadPage(newHotels)
+    saveLocalStorage("find", newHotels)
   })
-
+  
+  
 }
 
 export const clearFilter = (collection)=>{
   let lists = getLocalStorage('hotels')
+  saveLocalStorage("find",lists)
   loadPage(lists);
   collection.inputFilterAllowName.value="";
   collection.inputRangePrice.value=collection.inputRangePrice.max
