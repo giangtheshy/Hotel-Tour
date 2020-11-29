@@ -119,7 +119,6 @@ btnSelectSlideBot.forEach(btn => {
 
 
 inputContainer.addEventListener('mousemove', () => {
-  console.log(flagBlockInputBox);
   if (flagBlockInputBox) {
     inputBox.style.display = "block";
   }

@@ -822,7 +822,6 @@ input[type="date"] {
   place-items: center;
   visibility: hidden;
   transition: var(--main-transition);
-  cursor: pointer;
 }
 .show-overlay-login{
   visibility: visible;
