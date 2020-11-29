@@ -6,6 +6,10 @@ import {
   changeNumber,
   setUpDefaultCounter
 } from '../UI/display-amount.js'
+import {
+  saveLocalStorage,
+  addLocalStorage
+} from '../localstorage/localstorage.js'
 
 export function filterHotelAllowValue(hotels, value) {
   return hotels.filter(hotel => {
@@ -77,4 +81,18 @@ export function bookHotelRoom(buttonAmount,numberAmount) {
     displayAmount(number);
   })
 
+}
+
+export const findListHotel = (e, classL) => {
+  let element = e.target;
+  if (element.classList.contains(classL)) {
+    let flagFindHotel = true;
+    let title = {
+      title: element.dataset.id
+    };
+    const temp = [flagFindHotel, title]
+      saveLocalStorage("find", temp);
+    
+
+  }
 }

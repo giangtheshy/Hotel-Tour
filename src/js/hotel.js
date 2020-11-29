@@ -1,5 +1,7 @@
 import {
-  getLocalStorage,removeLocalStorage,saveLocalStorage
+  getLocalStorage,
+  addLocalStorage,
+  saveLocalStorage
 } from '../localstorage/localstorage.js'
 import {
   paginate,
@@ -7,13 +9,32 @@ import {
   displayHotels
 } from '../UI/displayPaginate.js'
 
-import {flagFind,getHotelFromLocal} from '../filter/findHotel.js'
+import {
+  flagFind,
+  getHotelFromLocal
+} from '../filter/findHotel.js'
 
-import  {sortingByFunction} from '../sorting/sortByService.js'
-import {filterAllowSelected,clearFilter} from '../filter/filterHotel.js'
-import {displayMinMaxPrice} from '../UI/display-amount.js'
+import {
+  sortingByFunction
+} from '../sorting/sortByService.js'
+import {
+  filterAllowSelected,
+  clearFilter
+} from '../filter/filterHotel.js'
+import {
+  displayMinMaxPrice
+} from '../UI/display-amount.js'
+import {
+  inputLocationFunc,
+  bookHotelRoom,
+  flagBlockInputBox,
+  findListHotel
+} from '../filter/search-hotel.js'
 
-import {displayPlaceListInput,displayHotelInput} from '../UI/display-place.js'
+import {
+  displayPlaceListInput,
+  displayHotelInput
+} from '../UI/display-place.js'
 
 const filterOverlay = document.querySelector('.filter-container')
 const filterBar = document.querySelector('.filter-bar')
@@ -29,17 +50,18 @@ let page = [];
 let hotelsOriginal;
 window.addEventListener('DOMContentLoaded', () => {
 
-  
-  if (flagFind===true){
-    hotelsOriginal=getHotelFromLocal();
-    saveLocalStorage("find",hotelsOriginal);
-    
-  }else{
-    hotelsOriginal = getLocalStorage("hotels")
+  let allHotels = getLocalStorage("hotels");
+  let allPlaces = getLocalStorage("places");
+  if (flagFind === true) {
+    hotelsOriginal = getHotelFromLocal("find");
+    saveLocalStorage("find", hotelsOriginal);
+
+  } else {
+    hotelsOriginal = allHotels
   }
-  
- 
-  
+  displayPlaceListInput(allPlaces, placesList);
+  searchHotel(allHotels);
+
   loadPage(hotelsOriginal);
   eventButtonPage();
   eventOverlayFilter();
@@ -48,13 +70,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-let filterNewHotel ;
+let filterNewHotel;
+
 function eventOverlayFilter() {
   let hotels = getLocalStorage("hotels")
   openFilterOverlay.addEventListener('click', () => {
-     filterNewHotel=filterBarEvent(hotels);
-     
-    
+    filterNewHotel = filterBarEvent(hotels);
+
+
     filterOverlay.classList.add('show-container')
     filterBar.classList.add('show-bar')
     document.addEventListener('click', (e) => {
@@ -67,52 +90,55 @@ function eventOverlayFilter() {
   })
 }
 
+document.querySelector('.logo-home').addEventListener('click', ()=>{
+  window.location = '../index.html'
+})
 
-const setupUI = ()=>{
-  
-  displayHotels(hotelsContainer,page[index]);
-  
-  displayButtonPage(pageBtnCenter,page,index);
-  
+const setupUI = () => {
+
+  displayHotels(hotelsContainer, page[index]);
+
+  displayButtonPage(pageBtnCenter, page, index);
+
 }
 
-export const loadPage = (hotels)=>{ 
-    index =0;
-  if (hotels.length>0){
-    page= paginate(hotels);
+export const loadPage = (hotels) => {
+  index = 0;
+  if (hotels.length > 0) {
+    page = paginate(hotels);
 
     setupUI();
-  }else{
-    hotelsContainer.innerHTML="";
+  } else {
+    hotelsContainer.innerHTML = "";
   }
   totalHotels.innerHTML = `${hotels.length}`
-  
+
 }
 
-function eventButtonPage(){
-  pageBtnsContainer.addEventListener('click', (e)=>{
+function eventButtonPage() {
+  pageBtnsContainer.addEventListener('click', (e) => {
     let element = e.target;
     if (element.classList.contains('page-btn-center')) return;
-    if (element.classList.contains('page-btn')){
+    if (element.classList.contains('page-btn')) {
       index = parseInt(element.dataset.index);
-      
+
     }
-    if (element.classList.contains('prev-btn')){
+    if (element.classList.contains('prev-btn')) {
       index--;
-      if (index<0){
-        index =page.length -1;
+      if (index < 0) {
+        index = page.length - 1;
       }
     }
-    if (element.classList.contains('next-btn')){
+    if (element.classList.contains('next-btn')) {
       index++;
-      if (index>page.length-1){
-        index=0;
+      if (index > page.length - 1) {
+        index = 0;
       }
     }
     setupUI();
-    
+
   })
-  
+
 
 }
 
@@ -124,23 +150,38 @@ const increase = document.querySelector('.increase')
 const decrease = document.querySelector('.decrease')
 
 
-export const objElementsSort = {leastService,mostService,oneToFive,fiveToOne,increase,decrease}
- 
+export const objElementsSort = {
+  leastService,
+  mostService,
+  oneToFive,
+  fiveToOne,
+  increase,
+  decrease
+}
+
 const inputFilterAllowName = document.querySelector('#filter-allow-name')
-const inputRangePrice =document.querySelector('.range-input-price') 
+const inputRangePrice = document.querySelector('.range-input-price')
 const checkedSale = document.querySelector('#hotel-sale')
 const checkedNoneSale = document.querySelector('#hotel-none-sale')
 const selectStars = document.querySelectorAll('.filter-allow-stars input')
 const selectTypeHotel = document.querySelectorAll(".filter-allow-type input")
 const checkedService = document.querySelectorAll('.filter-allow-service input')
 
-export const filterCollection = {inputFilterAllowName,inputRangePrice,checkedSale,checkedNoneSale,selectStars,selectTypeHotel,checkedService}
+export const filterCollection = {
+  inputFilterAllowName,
+  inputRangePrice,
+  checkedSale,
+  checkedNoneSale,
+  selectStars,
+  selectTypeHotel,
+  checkedService
+}
 
-const filterBarEvent = (hotels)=>{
-  displayMinMaxPrice(hotels,inputRangePrice,valueMinRange,valueMaxRange);
+const filterBarEvent = (hotels) => {
+  displayMinMaxPrice(hotels, inputRangePrice, valueMinRange, valueMaxRange);
   valueOfInputRange.innerText = inputRangePrice.max
-  filterAllowSelected(hotels,filterCollection)
-  
+  filterAllowSelected(hotels, filterCollection)
+
 }
 
 
@@ -154,9 +195,121 @@ const totalHotels = document.querySelector('.total-hotels')
 
 
 clearAllFilters.addEventListener('click', () => {
-  
+
   clearFilter(filterCollection)
 })
-inputRangePrice.addEventListener('input',()=>{
-  valueOfInputRange.innerText= inputRangePrice.value
+inputRangePrice.addEventListener('input', () => {
+  valueOfInputRange.innerText = inputRangePrice.value
+})
+
+
+const placesList = document.querySelector('.places-list')
+const hotelList = document.querySelector('.hotels-list')
+const inputContainer = document.querySelector('.input')
+const inputLocation = document.querySelector('#input-location')
+const inputBox = document.querySelector('.input-box')
+const inputBoxEnter = document.querySelector('.input-box-enter')
+const startDay = document.querySelector('#start-day')
+const endDay = document.querySelector('#end-day')
+
+const numberBox = document.querySelector('.number-box');
+const amountPerson = document.querySelector('.amount-person')
+const closeIcon = document.querySelector('.amount-person .fa-times')
+const buttonAmount = document.querySelectorAll('.button-amount')
+const numberAmount = document.querySelectorAll('.number-amount')
+const hotels = hotelList.childNodes
+
+const listHandleInput = {
+  inputLocation,
+  inputBox,
+  inputBoxEnter,
+  hotelList
+}
+const listGetDataInputHotel = {
+  hotels,
+  inputLocation,
+  inputBoxEnter,
+  startDay,
+  endDay,
+  closeIcon,
+  numberBox,
+  numberAmount
+}
+
+function searchHotel(hotels) {
+
+  inputLocationFunc(hotels, listHandleInput, listGetDataInputHotel)
+  bookHotelRoom(buttonAmount, numberAmount);
+  findHotelById();
+}
+
+
+amountPerson.addEventListener('click', () => {
+  if (numberBox.classList.contains('show')) {
+    numberBox.classList.remove('show');
+    closeIcon.classList.remove('show')
+  } else {
+    closeIcon.classList.add('show')
+    numberBox.classList.add('show');
+  }
+})
+
+inputContainer.addEventListener('mousemove', () => {
+  if (flagBlockInputBox) {
+    inputBox.style.display = "block";
+  }
+
+})
+inputContainer.addEventListener('mouseout', () => {
+  if (flagBlockInputBox) {
+    inputBox.style.display = "none";
+  }
+
+
+})
+
+
+const findHotel = document.querySelector('.find-hotel');
+let flagFindHotel = false;
+
+function findHotelById() {
+  findHotel.addEventListener('click', () => {
+    numberBox.classList.remove('show');
+    closeIcon.classList.remove('show')
+    const data = getDataFindHotel();
+    if (data.id === "" || data.id === undefined || inputLocation.value === "") {
+      alert("Please Enter Hotel !")
+    } else {
+
+      const temp = [flagFindHotel, data]
+      saveLocalStorage("find", temp);
+
+      let hotelsOriginal = getHotelFromLocal("find")
+      saveLocalStorage("find", hotelsOriginal)
+      loadPage(hotelsOriginal);
+    }
+  })
+}
+
+const getDataFindHotel = () => {
+  const getIdHotel = inputLocation.dataset.id;
+  const getStartDay = startDay.value;
+  const getEndDay = endDay.value;
+  const getRoom = document.querySelector('.number-room').innerText
+  const getCustomer = document.querySelector('.number-customer').innerText
+  const data = {
+    id: getIdHotel,
+    startDay: getStartDay,
+    endDay: getEndDay,
+    room: getRoom,
+    customer: getCustomer
+  }
+  return data;
+}
+placesList.addEventListener('click', (e) => {
+  clearFilter(filterCollection)
+  findListHotel(e, "place-list");
+  let hotelsOriginal = getHotelFromLocal("find")
+  saveLocalStorage("find", hotelsOriginal)
+  loadPage(hotelsOriginal);
 })

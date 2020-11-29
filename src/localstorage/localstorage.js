@@ -6,12 +6,7 @@ export function getLocalStorage(list){
 }
 export function saveLocalStorage(list,valueList){
   let lists = getLocalStorage(list);
-  if (lists.length===0){
-    lists.push(valueList);
-  }else{
     lists=valueList;
-  }
-  
  localStorage.setItem(list,JSON.stringify(lists));
 }
 export function addLocalStorage(list,valueList){

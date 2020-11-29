@@ -2,10 +2,11 @@
 import {getLocalStorage} from '../localstorage/localstorage.js'
 
 
-const flagFind = getLocalStorage("find")[0];
-const getHotelFromLocal = ()=>{
+let flagFind=getLocalStorage("find")[0]; 
+const getHotelFromLocal = (find)=>{
+  flagFind= getLocalStorage(find)[0];
   let lists = getLocalStorage("hotels")
-  let dataFind = getLocalStorage("find")
+  let dataFind = getLocalStorage(find)
   let hotel;
   if (dataFind[1].hasOwnProperty("id")){
     hotel = lists.filter(item=> item.id==dataFind[1].id)

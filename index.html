@@ -15,7 +15,7 @@
 
   <header>
     <div class="logo-header">
-      <img src="./images/logo-mytour.png" alt="myTour">
+      <img src="./images/logo-mytour.png" alt="myTour" class="logo-home">
     </div>
     <div class="nav-header">
       <ul class="nav-center">
@@ -50,7 +50,7 @@
         <span class="icon-container"><i class="far fa-bell"></i><span class="subtitle-icon">1</span></span>
       </div>
       <div class="user-icon">
-        <span><i class="far fa-user"></i><i class="fas fa-chevron-down"></i></span>
+        <button class="user-manage-btn"><i class="far fa-user"></i><i class="fas fa-chevron-down"></i></button>
       </div>
     </div>
 
@@ -242,7 +242,77 @@
   </footer>
 
 
-
+    <section class="overlay-login">
+      <div class="login-container">
+        <div class="login-header">
+          <button class="login-user active"><i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+          <button class="register-user"><i class="fas fa-user-plus"></i>
+            Register
+          </button>
+          <button class="close-overlay-login"><i class="fas fa-times"></i></button>
+        </div >
+        <div class="slide-login ">
+          <div class="login-center ">
+            <div class="link-account">
+              <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
+              <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
+            </div>
+            <div class="login-form ">
+              <form action="">
+                <div class="title-login">Login with Email</div>
+                <label class="user-name-login-box" >
+                  <input type="email" name="user-name" class="user-name-login" required autocomplete="off">
+                </label>
+                <label class="password-login-box" >
+                  <input type="password" name="password" class="password-login" required>
+                </label>
+          
+                <div class="login-footer">
+                  <label class="container-checkbox">Remember User
+                    <input type="checkbox" class="remember-user">
+                    <span class="checkmark"></span>
+                  </label>
+                  <div class="forgot-password">Forgot Password?</div>
+                </div>
+                <button class="login-btn">Login</button>
+              </form>
+            </div>
+          </div>
+          <div class="register-center ">
+            <div class="link-account">
+              <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
+              <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
+            </div>
+            <div class="register-form">
+              <form action="">
+                <div class="title-register">Register with Email</div>
+                <label class="user-name-register-box" >
+                  <input type="email" name="user-name" class="user-name-register" required autocomplete="off">
+                </label>
+                <label class="password-register-box" >
+                  <input type="password" name="password" class="password-register" required>
+                </label>
+                <label class="password-register-box-confirm" >
+                  <input type="password" name="password" class="password-register-confirm" required>
+                </label>
+          
+                <div class="register-footer">
+                  <label class="container-checkbox">I agree to Mytour's terms of service
+                    <input type="checkbox" class="remember-user">
+                    <span class="checkmark"></span>
+                  </label>
+                  <!-- <div class="forgot-password">Forgot Password?</div> -->
+                </div>
+                <button class="register-btn">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
 
 
