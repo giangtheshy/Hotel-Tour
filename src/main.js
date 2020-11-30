@@ -22,8 +22,9 @@ import {
   removeLocalStorage,
   addLocalStorage
 } from './localstorage/localstorage.js'
-
-
+import {
+  checkExistUser
+} from './User/validation.js'
 
 
 export const imgSlide = document.querySelectorAll('.img-slide')
@@ -49,6 +50,7 @@ export const btnSelectSlideTop = document.querySelectorAll('.btn-select-slide.sl
 export const btnSelectSlideBot = document.querySelectorAll('.btn-select-slide.slide-bottom')
 
 
+
 export async function dataHotel() {
   let url = '../hotel.json';
   let response = await fetch(url);
@@ -62,9 +64,14 @@ export async function dataPlace() {
   return dataPlace;
 }
 
+const adminAccount = {id:1,userName:"ad",password:"ad",cart:[],statusLogin:false};
 
 window.addEventListener("DOMContentLoaded", () => {
 
+  if (!checkExistUser('ad','ad')){
+    addLocalStorage("users",adminAccount);
+  }
+  
   dataPlace().then(data => {
       saveLocalStorage("places", data);
       displayPlace(data, placeContainer);
@@ -93,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setInterval(slideShowBot, 3000);
 })
 
-document.querySelector('.logo-home').addEventListener('click', ()=>{
+document.querySelector('.logo-home').addEventListener('click', () => {
   window.location = '../index.html'
 })
 
@@ -238,101 +245,16 @@ const getDataFindHotel = () => {
 }
 
 
-const userNameLoginBox = document.querySelector('.user-name-login-box')
-const passwordLoginBox = document.querySelector('.password-login-box')
-const userNameLogin = document.querySelector('.user-name-login')
-const passwordLogin = document.querySelector('.password-login')
-userNameLogin.addEventListener("focus",()=>{
-  userNameLoginBox.classList.add('move-top')
-})
-passwordLogin.addEventListener("focus",()=>{
-  passwordLoginBox.classList.add('move-top')
-})
-userNameLogin.addEventListener("focusout",()=>{
-  if (userNameLogin.value===""){
-
-    userNameLoginBox.classList.remove('move-top')
-  }
-})
-passwordLogin.addEventListener("focusout",()=>{
-  if (passwordLogin.value===""){
-
-    passwordLoginBox.classList.remove('move-top')
-  }
-})
 
 
-const userNameRegisterBox = document.querySelector('.user-name-register-box')
-const passwordRegisterBox = document.querySelector('.password-register-box')
-const passwordRegisterBoxConfirm = document.querySelector('.password-register-box-confirm')
-const userNameRegister = document.querySelector('.user-name-register')
-const passwordRegister = document.querySelector('.password-register')
-const passwordRegisterConfirm = document.querySelector('.password-register-confirm')
-
-userNameRegister.addEventListener("focus",()=>{
-  userNameRegisterBox.classList.add('move-top')
-})
-passwordRegister.addEventListener("focus",()=>{
-  passwordRegisterBox.classList.add('move-top')
-})
-passwordRegisterConfirm.addEventListener("focus",()=>{
-  passwordRegisterBoxConfirm.classList.add('move-top')
-})
-userNameRegister.addEventListener("focusout",()=>{
-  if (userNameRegister.value===""){
-
-    userNameRegisterBox.classList.remove('move-top')
-  }
-})
-passwordRegister.addEventListener("focusout",()=>{
-  if (passwordRegister.value===""){
-
-    passwordRegisterBox.classList.remove('move-top')
-  }
-})
-passwordRegisterConfirm.addEventListener("focusout",()=>{
-  if (passwordRegisterConfirm.value===""){
-
-    passwordRegisterBoxConfirm.classList.remove('move-top')
-  }
-})
-
-const loginUserBtn = document.querySelector('.login-user')
-const registerUserBtn = document.querySelector('.register-user')
-const slideLogin = document.querySelector('.slide-login')
-
-loginUserBtn.addEventListener('click',()=>{
-  loginUserBtn.classList.add('active')
-  registerUserBtn.classList.remove('active')
-  slideLogin.classList.remove('show-register')
-})
-
-registerUserBtn.addEventListener('click',()=>{
-  registerUserBtn.classList.add('active')
-  loginUserBtn.classList.remove('active')
-  slideLogin.classList.add('show-register')
-})
+                // ================================================================================
+                // ================================================================================
+                // ========================== SECTION LOGIN SETUP =================================
+                // ================================================================================
+                // ================================================================================
 
 
-const userManageBtn = document.querySelector('.user-manage-btn')
-const overlayLogin = document.querySelector(".overlay-login")
-const loginContainer = document.querySelector('.login-container')
 
-userManageBtn.addEventListener('click',()=>{
-  overlayLogin.classList.add("show-overlay-login")
-  loginContainer.classList.add("show-login-container")
-  document.addEventListener('click',(e)=>{
-    let element = e.target;
-    if (element.classList.contains("overlay-login")){
-      overlayLogin.classList.remove("show-overlay-login")
-      loginContainer.classList.remove("show-login-container")
-    }
-  })
-})
 
-const closeOverlayBtn = document.querySelector('.close-overlay-login')
 
-closeOverlayBtn.addEventListener('click', () => {
-  overlayLogin.classList.remove("show-overlay-login")
-  loginContainer.classList.remove("show-login-container")
-})
+

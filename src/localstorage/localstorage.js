@@ -22,6 +22,7 @@ export function editLocalStorage(list,value){
       return item;
     }
   });
+  
   localStorage.setItem(list,JSON.stringify(lists));
   
 }
