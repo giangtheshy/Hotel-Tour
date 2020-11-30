@@ -7,12 +7,15 @@
   <script src="./src/main.js" type="module" defer></script>
   <script src="./src/js/intermediateFile.js" type="module" defer></script>
   <script src="https://kit.fontawesome.com/776bbe23d6.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Tour</title>
 </head>
 
 <body>
+  <div class="preloader">
+    <img src="./images/preloader.jpg" alt="preloader">
+  </div>
 
   <header>
     <div class="logo-header">
@@ -51,15 +54,16 @@
         <span class="icon-container"><i class="far fa-bell"></i><span class="subtitle-icon">1</span></span>
       </div>
       <div class="user-icon">
-        <button class="user-manage-btn"><i class="far fa-user"></i><i class="fas fa-user"></i><i class="fas fa-chevron-down"></i></button>
+        <button class="user-manage-btn"><i class="far fa-user"></i><i class="fas fa-user"></i><i
+            class="fas fa-chevron-down"></i></button>
         <div class="user-manage-box">
           <div class="manage-header"><i class="fas fa-user-tie"></i>
             <span class="user-name">Giang</span>
           </div>
-            <ul class="drop-down">
-              <li><button class="manage-user-btn">Cart <i class="fas fa-cart-arrow-down"></i> </button></li>
-              <li><button class="manage-user-btn logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button></li>
-            </ul>
+          <ul class="drop-down">
+            <li><button class="manage-user-btn">Cart <i class="fas fa-cart-arrow-down"></i> </button></li>
+            <li><button class="manage-user-btn logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -75,7 +79,8 @@
       <div class="form-input-hotel">
         <div class="form">
           <div class="input">
-            <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off" data-id="">
+            <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off"
+              data-id="">
             <div class="input-box">
               <h4 class="title">Điểm đến phổ biến</h4>
               <div class="place">
@@ -84,35 +89,37 @@
                 </ul>
               </div>
             </div>
-            <div class="input-box-enter">  
-              <h4 class="title">Hotel</h4>     
+            <div class="input-box-enter">
+              <h4 class="title">Hotel</h4>
               <div class="hotel">
                 <ul class="hotels-list">
                   <!-- hotel List -->
-                  
+
                 </ul>
               </div>
             </div>
           </div>
 
           <div class="date-center">
-            <input type="date" name="start-day" id="start-day" title="Click icon Calendar to set start day" >
+            <input type="date" name="start-day" id="start-day" title="Click icon Calendar to set start day">
             <input type="date" name="end-day" id="end-day" title="Click icon Calendar to set end day">
           </div>
-          <button class="amount-person" title="Click to set Room"><i class="fas fa-key"></i> <span class="number-amount number-room">1</span> Room <i class="fas fa-user-friends"></i> <span class="number-amount number-customer">1</span>
+          <button class="amount-person" title="Click to set Room"><i class="fas fa-key"></i> <span
+              class="number-amount number-room">1</span> Room <i class="fas fa-user-friends"></i> <span
+              class="number-amount number-customer">1</span>
             Person <i class="fas fa-times"></i></button>
-            <div class="number-box ">
-              <div class="room">
-                <button class="button-amount decrease-room"><i class="fas fa-minus"></i></button>
-                <div class="text"><span class="number-amount number-room">1</span> Room</div>
-                <button class="button-amount increase-room"><i class="fas fa-plus"></i></button>
-              </div>
-              <div class="customer">
-                <button class="button-amount decrease-customer"><i class="fas fa-minus"></i></button>
-                <div class="text"><span class="number-amount number-customer">1</span> Customer</div>
-                <button class="button-amount increase-customer"><i class="fas fa-plus"></i></button>
-              </div>
+          <div class="number-box ">
+            <div class="room">
+              <button class="button-amount decrease-room"><i class="fas fa-minus"></i></button>
+              <div class="text"><span class="number-amount number-room">1</span> Room</div>
+              <button class="button-amount increase-room"><i class="fas fa-plus"></i></button>
             </div>
+            <div class="customer">
+              <button class="button-amount decrease-customer"><i class="fas fa-minus"></i></button>
+              <div class="text"><span class="number-amount number-customer">1</span> Customer</div>
+              <button class="button-amount increase-customer"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
           <button class="find-hotel" title="Click to find the best Hotel">Find Hotel</button>
         </div>
       </div>
@@ -252,88 +259,90 @@
   </footer>
 
 
-    <section class="overlay-login">
-      <div class="login-container">
-        <div class="login-header">
-          <button class="login-user active"><i class="fas fa-sign-in-alt"></i>
-            Login
-          </button>
-          <button class="register-user"><i class="fas fa-user-plus"></i>
-            Register
-          </button>
-          <button class="close-overlay-login"><i class="fas fa-times"></i></button>
-        </div >
-        <div class="slide-login ">
-          <div class="login-center ">
-            <div class="link-account">
-              <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
-              <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
-            </div>
-            <div class="login-form ">
-              <form>
-                <div class="title-login">Login with Email</div>
-                <label class="user-name-login-box">
-                  <input type="text" name="user-name" class="user-name-login" required autocomplete="off">
-                </label>
-                <label class="password-login-box" >
-                  <input type="password" name="password" class="password-login" required>
-                </label>
-          
-                <div class="login-footer">
-                  <label class="container-checkbox">Remember User
-                    <input type="checkbox" class="remember-user">
-                    <span class="checkmark"></span>
-                  </label>
-                  <div class="forgot-password">Forgot Password?</div>
-                </div>
-                <button class="login-btn">Login</button>
-              </form>
-            </div>
+  <section class="overlay-login">
+    <div class="login-container">
+      <div class="login-header">
+        <button class="login-user active"><i class="fas fa-sign-in-alt"></i>
+          Login
+        </button>
+        <button class="register-user"><i class="fas fa-user-plus"></i>
+          Register
+        </button>
+        <button class="close-overlay-login"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="slide-login ">
+        <div class="login-center ">
+          <div class="link-account">
+            <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
+            <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
           </div>
-          <div class="register-center ">
-            <div class="link-account">
-              <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
-              <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
-            </div>
-            <div class="register-form">
-              <form >
-                <div class="title-register">Register with Email</div>
-                <label class="user-name-register-box" >
-                  <input type="email" name="user-name" class="user-name-register" required autocomplete="off" title="Ex: username@gmail.com">
-                  <span class="alert-register">Contains least 1 '@',1 '.' and length from 9 to 30 -Ex: username@gmail.com</span>
-                  <span class="icon-validate-user"><span class="slide-icon-validate ">
-                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
-                  </span></span>
+          <div class="login-form ">
+            <form>
+              <div class="title-login">Login with Email</div>
+              <label class="user-name-login-box">
+                <input type="text" name="user-name" class="user-name-login" required autocomplete="off">
+              </label>
+              <label class="password-login-box">
+                <input type="password" name="password" class="password-login" required>
+              </label>
+
+              <div class="login-footer">
+                <label class="container-checkbox">Remember User
+                  <input type="checkbox" class="remember-user">
+                  <span class="checkmark"></span>
                 </label>
-                <label class="password-register-box" >
-                  <input type="password" name="password" class="password-register" required title="Ex: a123456">
-                  <span class="alert-register">Begin must letter and length from 7 to 15 -Ex: a123456</span>
-                  <span class="icon-validate-user"><span class="slide-icon-validate">
-                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
-                  </span></span>
-                </label>
-                <label class="password-register-box-confirm" >
-                  <input type="password" name="password" class="password-register-confirm" required title="Ex: a123456">
-                  <span class="icon-validate-user"><span class="slide-icon-validate">
-                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
-                  </span></span>
-                </label>
-          
-                <div class="register-footer">
-                  <label class="container-checkbox">I agree to Mytour's terms of service
-                    <input type="checkbox" class="remember-user">
-                    <span class="checkmark"></span>
-                  </label>
-                  <!-- <div class="forgot-password">Forgot Password?</div> -->
-                </div>
-                <button class="register-btn">Register</button>
-              </form>
-            </div>
+                <div class="forgot-password">Forgot Password?</div>
+              </div>
+              <button class="login-btn">Login</button>
+            </form>
           </div>
         </div>
-        
+        <div class="register-center ">
+          <div class="link-account">
+            <button class="link-fb"><i class="fab fa-facebook"></i> Continue with Facebook</button>
+            <button class="link-google"><i class="fab fa-google-plus"></i>Continue with Google</button>
+          </div>
+          <div class="register-form">
+            <form>
+              <div class="title-register">Register with Email</div>
+              <label class="user-name-register-box">
+                <input type="email" name="user-name" class="user-name-register" required autocomplete="off"
+                  title="Ex: username@gmail.com">
+                <span class="alert-register">Contains least 1 '@',1 '.' and length from 9 to 30 -Ex:
+                  username@gmail.com</span>
+                <span class="icon-validate-user"><span class="slide-icon-validate ">
+                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
+                  </span></span>
+              </label>
+              <label class="password-register-box">
+                <input type="password" name="password" class="password-register" required title="Ex: a123456">
+                <span class="alert-register">Begin must letter and length from 7 to 15 -Ex: a123456</span>
+                <span class="icon-validate-user"><span class="slide-icon-validate">
+                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
+                  </span></span>
+              </label>
+              <label class="password-register-box-confirm">
+                <input type="password" name="password" class="password-register-confirm" required title="Ex: a123456">
+                <span class="icon-validate-user"><span class="slide-icon-validate">
+                    <i class="fas fa-check"></i><i class="fas fa-times"></i>
+                  </span></span>
+              </label>
+
+              <div class="register-footer">
+                <label class="container-checkbox">I agree to Mytour's terms of service
+                  <input type="checkbox" class="remember-user">
+                  <span class="checkmark"></span>
+                </label>
+                <!-- <div class="forgot-password">Forgot Password?</div> -->
+              </div>
+              <button class="register-btn">Register</button>
+            </form>
+          </div>
+        </div>
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
 

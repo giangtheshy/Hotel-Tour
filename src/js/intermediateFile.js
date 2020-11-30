@@ -20,10 +20,11 @@ import {
 
 let flagLogin = false;
 
-
+const preloader = document.querySelector(".preloader");
 
 window.addEventListener('DOMContentLoaded',()=>{
   initializeUser();
+  preloader.classList.add("hide-preloader");
 
 })
 
