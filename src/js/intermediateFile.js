@@ -32,10 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
  
 
 })
-const checkItemCheckout = (cart,id) => {
-  let check = cart.find(item =>item.id===id)
-  return check.checkout;
-}
+
 
 const initializeUser = (user) => {
   
@@ -44,6 +41,9 @@ const initializeUser = (user) => {
     flagLogin = true;
     userManageBtn.classList.add('login')
     userNameTitle.innerHTML = user.userName;
+  }else{
+    overlayLogin.classList.add('show-overlay-login')
+    loginContainer.classList.add('show-login-container')
   }
 }
 
@@ -297,32 +297,38 @@ const toursContainer = document.querySelector('.tours-container')
 
 const setUpCart  = () => {
   let user = getUserCurrentLogin();
-  displayCartItem(toursContainer,user.cart)
+  if(user){
+
+    displayCartItem(toursContainer,user.cart)
+  }
 }
 document.addEventListener('click', e=>{
   
   let element = e.target;
   let user = getUserCurrentLogin();
-  if (element.classList.contains('remove-btn')){
-    let tour = element.parentElement.parentElement;
-    toursContainer.removeChild(tour);
-    user.cart = removeItemFromCart(user,tour.dataset.id);
-    editLocalStorage('users',user);
-
-  }
-  const total = document.querySelector('.price-total')
-  total.innerHTML = displayTotalPrice(user.cart);
-  if (element.classList.contains('checkout-btn')){
-    user.cart=checkoutAllItem(user.cart)
-    editLocalStorage('users',user);
-    const checkoutAlert  = document.querySelectorAll('.checkout-alert')
-    checkoutAlert.forEach(item=>{
-      item.classList.add('show');
-    })
+  if (user){
+    if (element.classList.contains('remove-btn')){
+      let tour = element.parentElement.parentElement;
+      toursContainer.removeChild(tour);
+      user.cart = removeItemFromCart(user,tour.dataset.id);
+      editLocalStorage('users',user);
+  
+    }
+    const total = document.querySelector('.price-total')
     total.innerHTML = displayTotalPrice(user.cart);
-  }
-  if (element.classList.contains('shopping-cart-overlay')){
-    cartOverlay.classList.remove('show')
-    cartSideBar.classList.remove('show')
+    if (element.classList.contains('checkout-btn')){
+      user.cart=checkoutAllItem(user.cart)
+      editLocalStorage('users',user);
+      const checkoutAlert  = document.querySelectorAll('.checkout-alert')
+      checkoutAlert.forEach(item=>{
+        item.classList.add('show');
+      })
+      total.innerHTML = displayTotalPrice(user.cart);
+    }
+    if (element.classList.contains('shopping-cart-overlay')){
+      cartOverlay.classList.remove('show')
+      cartSideBar.classList.remove('show')
+    }
+
   }
 })

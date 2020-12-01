@@ -353,8 +353,15 @@ document.addEventListener('click', (e) => {
     data.checkout = false;
     let user = getUserCurrentLogin();
     if (user.cart.find(hotel => hotel.id === id)) {
-      cartOverlay.classList.add('show')
-      cartSideBar.classList.add('show')
+      if(user.cart.find(hotel => hotel.id === id).checkout=== true&&!user.cart.some(item=>item.id===id&&item.checkout===false)){
+          user.cart.push(data);
+          editLocalStorage('users', user)
+      }else{
+
+        alert("Hotel Already Exists !")
+        cartOverlay.classList.add('show')
+        cartSideBar.classList.add('show')
+      }
     } else {
       user.cart.push(data);
       editLocalStorage('users', user)

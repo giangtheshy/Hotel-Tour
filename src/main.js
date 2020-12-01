@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(error => console.log(error));
-
+  
   removeLocalStorage("find");
   findHotelById();
   setInterval(slideShow, 5000);

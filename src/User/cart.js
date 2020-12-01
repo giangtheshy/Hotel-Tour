@@ -77,8 +77,6 @@ const displayTotalPrice = (cart) => {
     if (lengthDay===0) lengthDay=1
     if (item.checkout === false) {
       total += parseInt(hotel.price * item.room * lengthDay);
-      console.log(lengthDay);
-
     }
   })
   return total;
