@@ -28,4 +28,8 @@ const logOutAccount = () => {
   saveLocalStorage("users", list);
 
 }
-export {checkValueRegister,changeIconValidate,logOutAccount}
+const getUserCurrentLogin = () => {
+  let user = getLocalStorage('users').filter(user=>user.statusLogin=== true)
+  return user[0];
+}
+export {checkValueRegister,changeIconValidate,logOutAccount,getUserCurrentLogin}

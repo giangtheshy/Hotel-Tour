@@ -75,7 +75,7 @@ const displayHotels = (container, hotels) => {
             ${checkSale(hotel.sale,hotel.price,hotel.randomNum)}
           </div>
           <div class="view-room">
-            <button class="view-room-btn">View Room</button>
+            <button class="view-room-btn" data-id=${hotel.id}>Booking </button>
           </div>
         </div>
       </div>

@@ -6,34 +6,44 @@ import {
 } from '../User/validation.js'
 import {
   checkValueRegister,
-  changeIconValidate,logOutAccount
+  changeIconValidate,
+  logOutAccount
 } from '../User/UserUI.js'
 import {
   saveLocalStorage,
   getLocalStorage,
-  addLocalStorage
+  addLocalStorage,
+  editLocalStorage
 } from '../localstorage/localstorage.js'
+import {displayCartItem,removeItemFromCart,displayTotalPrice,checkoutAllItem} from '../User/cart.js'
 
-
-
+import {getUserCurrentLogin} from '../User/UserUI.js'
 
 
 let flagLogin = false;
 
 const preloader = document.querySelector(".preloader");
 
-window.addEventListener('DOMContentLoaded',()=>{
-  initializeUser();
+window.addEventListener('DOMContentLoaded', () => {
   preloader.classList.add("hide-preloader");
+  let user = getUserCurrentLogin();
+  setUpCart();
+  initializeUser(user);
+ 
 
 })
+const checkItemCheckout = (cart,id) => {
+  let check = cart.find(item =>item.id===id)
+  return check.checkout;
+}
 
-const initializeUser = () => {
-  let user = getLocalStorage('users').filter(user => user.statusLogin===true)
-  if (user.length>0){
+const initializeUser = (user) => {
+  
+  
+  if (user) {
     flagLogin = true;
     userManageBtn.classList.add('login')
-    userNameTitle.innerHTML=user[0].userName;
+    userNameTitle.innerHTML = user.userName;
   }
 }
 
@@ -125,10 +135,18 @@ const overlayLogin = document.querySelector(".overlay-login")
 const loginContainer = document.querySelector('.login-container')
 const userManageBox = document.querySelector('.user-manage-box')
 const logoutBtn = document.querySelector('.logout-btn')
+const cartBtn = document.querySelector('.cart-btn')
+
+cartBtn.addEventListener('click', () => {
+  setUpCart();
+  cartOverlay.classList.add('show')
+  cartSideBar.classList.add('show')
+  userManageBox.classList.remove('show-manage-box')
+})
 
 
 userManageBtn.addEventListener('click', () => {
-  if (flagLogin===false) {
+  if (flagLogin === false) {
     overlayLogin.classList.add("show-overlay-login")
     loginContainer.classList.add("show-login-container")
     document.addEventListener('click', (e) => {
@@ -138,10 +156,10 @@ userManageBtn.addEventListener('click', () => {
       }
     })
 
-  }else{
+  } else {
     userManageBox.classList.toggle('show-manage-box')
-    logoutBtn.addEventListener('click',()=>{
-      flagLogin=false;
+    logoutBtn.addEventListener('click', () => {
+      flagLogin = false;
       logOutAccount();
       userManageBox.classList.remove('show-manage-box')
       userManageBtn.classList.remove('login')
@@ -250,12 +268,61 @@ loginForm.addEventListener('submit', e => {
   const userName = userNameLogin.value;
   const password = passwordLogin.value;
   const checkUser = validateUserLogin(userName, password)
-  if(checkUser){
+  if (checkUser) {
     flagLogin = true;
     closeOverlayLogin();
     userManageBtn.classList.add('login')
-    userNameTitle.innerHTML=userName;
-  }else{
+    userNameTitle.innerHTML = userName;
+  } else {
     alert("Incorrect ! Enter Again!")
+  }
+})
+
+
+
+// Cart Set Up
+
+const hideCart = document.querySelector('.hide-side-bar')
+const cartOverlay = document.querySelector('.shopping-cart-overlay')
+const cartSideBar = document.querySelector('.cart-side-bar')
+
+
+hideCart.addEventListener('click',()=>{
+  cartOverlay.classList.remove('show')
+  cartSideBar.classList.remove('show')
+})
+
+const toursContainer = document.querySelector('.tours-container')
+
+
+const setUpCart  = () => {
+  let user = getUserCurrentLogin();
+  displayCartItem(toursContainer,user.cart)
+}
+document.addEventListener('click', e=>{
+  
+  let element = e.target;
+  let user = getUserCurrentLogin();
+  if (element.classList.contains('remove-btn')){
+    let tour = element.parentElement.parentElement;
+    toursContainer.removeChild(tour);
+    user.cart = removeItemFromCart(user,tour.dataset.id);
+    editLocalStorage('users',user);
+
+  }
+  const total = document.querySelector('.price-total')
+  total.innerHTML = displayTotalPrice(user.cart);
+  if (element.classList.contains('checkout-btn')){
+    user.cart=checkoutAllItem(user.cart)
+    editLocalStorage('users',user);
+    const checkoutAlert  = document.querySelectorAll('.checkout-alert')
+    checkoutAlert.forEach(item=>{
+      item.classList.add('show');
+    })
+    total.innerHTML = displayTotalPrice(user.cart);
+  }
+  if (element.classList.contains('shopping-cart-overlay')){
+    cartOverlay.classList.remove('show')
+    cartSideBar.classList.remove('show')
   }
 })

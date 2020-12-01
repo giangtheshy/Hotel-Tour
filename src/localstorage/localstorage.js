@@ -26,6 +26,10 @@ export function editLocalStorage(list,value){
   localStorage.setItem(list,JSON.stringify(lists));
   
 }
+export function removeItemFromLocalStorage(list,id){
+  let lists = getLocalStorage(list).filter(item => item.id!==id)
+  localStorage.setItem(list,JSON.stringify(lists));
+}
 export function removeLocalStorage(list){
   
   let lists = [];

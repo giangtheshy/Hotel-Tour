@@ -1,7 +1,8 @@
 import {
   getLocalStorage,
   addLocalStorage,
-  saveLocalStorage
+  saveLocalStorage,
+  editLocalStorage
 } from '../localstorage/localstorage.js'
 import {
   paginate,
@@ -35,6 +36,11 @@ import {
   displayPlaceListInput,
   displayHotelInput
 } from '../UI/display-place.js'
+import {
+  getUserCurrentLogin
+} from '../User/UserUI.js'
+import {displayCartItem} from '../User/cart.js'
+
 
 const filterOverlay = document.querySelector('.filter-container')
 const filterBar = document.querySelector('.filter-bar')
@@ -90,7 +96,7 @@ function eventOverlayFilter() {
   })
 }
 
-document.querySelector('.logo-home').addEventListener('click', ()=>{
+document.querySelector('.logo-home').addEventListener('click', () => {
   window.location = '../index.html'
 })
 
@@ -293,8 +299,15 @@ function findHotelById() {
 
 const getDataFindHotel = () => {
   const getIdHotel = inputLocation.dataset.id;
-  const getStartDay = startDay.value;
-  const getEndDay = endDay.value;
+  let getStartDay = startDay.value;
+  let getEndDay = endDay.value;
+  let date = new Date();
+  if (!getStartDay){
+    getStartDay = `${formatDate(date.getMonth())}/${formatDate(date.getDate())}/${date.getFullYear()}`;
+  }
+  if (!getEndDay){
+    getEndDay = `${formatDate(date.getMonth())}/${formatDate(date.getDate())}/${date.getFullYear()}`;
+  }
   const getRoom = document.querySelector('.number-room').innerText
   const getCustomer = document.querySelector('.number-customer').innerText
   const data = {
@@ -306,10 +319,47 @@ const getDataFindHotel = () => {
   }
   return data;
 }
+const formatDate = (num)=>{
+  num=parseInt(num,10);
+  if (num<10){
+    num='0'+num;
+  }
+  return num;
+}
 placesList.addEventListener('click', (e) => {
   clearFilter(filterCollection)
   findListHotel(e, "place-list");
   let hotelsOriginal = getHotelFromLocal("find")
   saveLocalStorage("find", hotelsOriginal)
   loadPage(hotelsOriginal);
+})
+
+
+
+const cartOverlay = document.querySelector('.shopping-cart-overlay')
+const cartSideBar = document.querySelector('.cart-side-bar')
+const toursContainer = document.querySelector('.tours-container')
+const setUpCart  = () => {
+  let user = getUserCurrentLogin();
+  displayCartItem(toursContainer,user.cart)
+}
+document.addEventListener('click', (e) => {
+  let curElement = e.target;
+  if (curElement.classList.contains('view-room-btn')) {
+    setUpCart();
+    let id = curElement.dataset.id;
+    let data = getDataFindHotel();
+    data.id = id;
+    data.checkout = false;
+    let user = getUserCurrentLogin();
+    if (user.cart.find(hotel => hotel.id === id)) {
+      cartOverlay.classList.add('show')
+      cartSideBar.classList.add('show')
+    } else {
+      user.cart.push(data);
+      editLocalStorage('users', user)
+      
+    }
+
+  }
 })
