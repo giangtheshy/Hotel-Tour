@@ -5,6 +5,7 @@ import {getLocalStorage} from '../localstorage/localstorage.js'
 let flagFind=getLocalStorage("find")[0]; 
 const getHotelFromLocal = (find)=>{
   flagFind= getLocalStorage(find)[0];
+
   let lists = getLocalStorage("hotels")
   let dataFind = getLocalStorage(find)
   let hotel;

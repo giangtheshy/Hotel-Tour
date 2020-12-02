@@ -25,7 +25,7 @@ import {
 import {
   checkExistUser
 } from './User/validation.js'
-
+import {alert} from './js/intermediateFile.js'
 
 export const imgSlide = document.querySelectorAll('.img-slide')
 export const slideBot = document.querySelectorAll('.slide-bot')
@@ -193,7 +193,7 @@ function findHotelById() {
     flagFindHotel = true;
     const data = getDataFindHotel();
     if (data.id === "") {
-      alert("Please Enter Hotel !")
+      alert("error","Please Enter Hotel !")
     } else {
       window.location.href = '../src/hotel.html'
 
@@ -249,10 +249,9 @@ const getDataFindHotel = () => {
 
                 // ================================================================================
                 // ================================================================================
-                // ========================== SECTION LOGIN SETUP =================================
+                // ========================== RESPONSIVE SET UP =================================
                 // ================================================================================
                 // ================================================================================
-
 
 
 

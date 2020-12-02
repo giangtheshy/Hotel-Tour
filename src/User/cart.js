@@ -16,6 +16,12 @@ const displayCartItem = (container, cart) => {
     if (item.endDay == "") {
       item.endDay = `${date.getFullYear()}-${formatDate(date.getMonth())}-${formatDate(date.getDate())}`;
     }
+    const start = new Date(item.startDay);
+    const end = new Date(item.endDay)
+    const lengthTime = Math.abs(end - start);
+    let lengthDay = Math.ceil(lengthTime / (1000 * 60 * 60 * 24))
+    if (lengthDay===0) lengthDay=1
+    const total = parseInt(hotel.price * item.room * lengthDay)
     result += `<div class="tour-center" data-id=${item.id}>
     <button class="remove-btn"><i class="remove-btn fas fa-times"></i></button>
     <div class="img-container">
@@ -46,7 +52,7 @@ const displayCartItem = (container, cart) => {
         </div>
 
         <div class="price-center">
-          $ <span class="price">${hotel.price}</span>
+          $ <span class="price">${total}</span>
         </div>
       </div>
     </div>

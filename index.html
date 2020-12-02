@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/internmediate.css">
   <script src="./src/main.js" type="module" defer></script>
   <script src="./src/js/intermediateFile.js" type="module" defer></script>
   <script src="https://kit.fontawesome.com/776bbe23d6.js" crossorigin="anonymous"></script>
@@ -16,8 +17,20 @@
   <div class="preloader">
     <img src="./images/preloader.jpg" alt="preloader">
   </div>
-
+  <div class="alert-box">
+    <div class="icon-alert ">
+      <span class="success-icon"><i class="far fa-check-circle"></i></span> <span class="error-icon"><i class="far fa-times-circle"></i></span>
+      <span class="warning-icon"><i class="fas fa-exclamation-circle"></i></span>
+    </div>
+    <h3 class="type-alert">Successful</h3>
+    <div class="content-alert">
+      Register Successful!!
+    </div>
+    <button class="alert-btn ">Ok</button>
+  </div>
+  <button class="open-nav-header"><i class="fas fa-bars"></i></button>
   <header>
+    
     <div class="logo-header">
       <img src="./images/logo-mytour.png" alt="myTour" class="logo-home">
     </div>
@@ -47,11 +60,14 @@
     </div>
     <div class="user-header">
       <div class="messenger-icon">
-        <span class="icon-container"><i class="far fa-comments"></i></i><span class="subtitle-icon">2</span></span>
+        <span class="icon-container"><i class="far fa-comments"></i></i><span class="subtitle-icon">0</span></span>
 
       </div>
       <div class="notification-icon">
-        <span class="icon-container"><i class="far fa-bell"></i><span class="subtitle-icon">1</span></span>
+        <span class="icon-container notification-btn"><i class="far fa-bell"></i><span class="subtitle-icon subtitle-icon-noti">1</span></span>
+        <div class="notification-box">
+          
+        </div>
       </div>
       <div class="user-icon">
         <button class="user-manage-btn"><i class="far fa-user"></i><i class="fas fa-user"></i><i

@@ -40,7 +40,7 @@ import {
   getUserCurrentLogin
 } from '../User/UserUI.js'
 import {displayCartItem} from '../User/cart.js'
-
+import {alert,flagLogin} from '../js/intermediateFile.js'
 
 const filterOverlay = document.querySelector('.filter-container')
 const filterBar = document.querySelector('.filter-bar')
@@ -64,6 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   } else {
     hotelsOriginal = allHotels
+    saveLocalStorage("find", hotelsOriginal);
   }
   displayPlaceListInput(allPlaces, placesList);
   searchHotel(allHotels);
@@ -203,6 +204,8 @@ const totalHotels = document.querySelector('.total-hotels')
 clearAllFilters.addEventListener('click', () => {
 
   clearFilter(filterCollection)
+  filterOverlay.classList.remove('show-container')
+        filterBar.classList.remove('show-bar')
 })
 inputRangePrice.addEventListener('input', () => {
   valueOfInputRange.innerText = inputRangePrice.value
@@ -284,7 +287,7 @@ function findHotelById() {
     closeIcon.classList.remove('show')
     const data = getDataFindHotel();
     if (data.id === "" || data.id === undefined || inputLocation.value === "") {
-      alert("Please Enter Hotel !")
+      alert("error","Please Enter Hotel !")
     } else {
 
       const temp = [flagFindHotel, data]
@@ -345,7 +348,7 @@ const setUpCart  = () => {
 }
 document.addEventListener('click', (e) => {
   let curElement = e.target;
-  if (curElement.classList.contains('view-room-btn')) {
+  if (curElement.classList.contains('view-room-btn')&&flagLogin===true) {
     setUpCart();
     let id = curElement.dataset.id;
     let data = getDataFindHotel();
@@ -358,7 +361,7 @@ document.addEventListener('click', (e) => {
           editLocalStorage('users', user)
       }else{
 
-        alert("Hotel Already Exists !")
+        alert("warning","Hotel Already Exists !")
         cartOverlay.classList.add('show')
         cartSideBar.classList.add('show')
       }
@@ -368,5 +371,17 @@ document.addEventListener('click', (e) => {
       
     }
 
+  }else if(curElement.classList.contains('view-room-btn')&&flagLogin===false){
+    alert("error","Please Login To Booking !");
+    
   }
+})
+
+
+
+const openBooking = document.querySelector('.open-booking')
+const booking = document.querySelector('.booking')
+
+openBooking.addEventListener('click',()=>{
+  booking.classList.toggle('show')
 })

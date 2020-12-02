@@ -18,9 +18,9 @@ import {
 import {displayCartItem,removeItemFromCart,displayTotalPrice,checkoutAllItem} from '../User/cart.js'
 
 import {getUserCurrentLogin} from '../User/UserUI.js'
+import {displayNotification} from '../User/notification.js'
 
-
-let flagLogin = false;
+export let flagLogin = false;
 
 const preloader = document.querySelector(".preloader");
 
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let user = getUserCurrentLogin();
   setUpCart();
   initializeUser(user);
- 
+  initNotification();
 
 })
 
@@ -142,6 +142,7 @@ cartBtn.addEventListener('click', () => {
   cartOverlay.classList.add('show')
   cartSideBar.classList.add('show')
   userManageBox.classList.remove('show-manage-box')
+  notificationBox.classList.remove('show')
 })
 
 
@@ -229,7 +230,7 @@ const userNameTitle = document.querySelector('.user-manage-box .user-name')
 
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (objAllTrue(listFlagRegister) === true && agreeTermsRegister.checked === true) {
+  if (objAllTrue(listFlagRegister) === true && agreeTermsRegister.checked === true&&validationUserNameRegister(userNameRegister.value)===true) {
     const userName = userNameRegister.value;
     let password = passwordRegister.value;
     let cart = [];
@@ -243,13 +244,13 @@ registerForm.addEventListener('submit', (e) => {
       statusLogin
     };
     addLocalStorage("users", user);
-    alert("Register success !");
+    alert("success","Register success !");
     loginUserBtn.classList.add('active')
     registerUserBtn.classList.remove('active')
     slideLogin.classList.remove('show-register')
 
   } else {
-    alert("Please Enter Correct Info and Agree Terms !")
+    alert("error","Please Enter Correct Info!")
     if (objAllTrue(listFlagRegister) === true && agreeTermsRegister.checked === false) {
       agreeTermsRegister.focus();
       agreeTermsRegister.checked = true;
@@ -274,7 +275,7 @@ loginForm.addEventListener('submit', e => {
     userManageBtn.classList.add('login')
     userNameTitle.innerHTML = userName;
   } else {
-    alert("Incorrect ! Enter Again!")
+    alert("error","Incorrect ! Enter Again!")
   }
 })
 
@@ -331,4 +332,70 @@ document.addEventListener('click', e=>{
     }
 
   }
+})
+
+
+const alertBox = document.querySelector('.alert-box')
+
+export const alert = (type,content) =>{
+  alertBox.classList.add('show')
+  alertBox.classList.add(type)
+  setTimeout(()=>{
+    alertBox.classList.remove(type)
+    alertBox.classList.remove('show')
+  },2000)
+  const okBtn = alertBox.querySelector('.alert-btn')
+  okBtn.addEventListener('click', ()=>{
+    alertBox.classList.remove(type)
+    alertBox.classList.remove('show')
+  })
+  const contentAlert = alertBox.querySelector('.content-alert')
+  contentAlert.innerHTML = content
+  const typeAlert = alertBox.querySelector('.type-alert')
+  if (type=="success"){
+    typeAlert.innerHTML = "Successful !"
+  }else if (type == "error"){
+    typeAlert.innerHTML = "Error !"
+  }else if (type == "warning"){
+    typeAlert.innerHTML = "Warning !"
+  }
+}
+
+const notificationBtn = document.querySelector('.notification-btn')
+const notificationBox = document.querySelector('.notification-box')
+const subtitleNoti  = document.querySelector('.subtitle-icon-noti')
+
+const initNotification = () => {
+  notificationBox.innerHTML = displayNotification();
+  subtitleNoti.innerHTML = notificationBox.children.length;
+}
+
+notificationBtn.addEventListener('click', () =>{
+  notificationBox.classList.toggle('show')
+  
+  document.addEventListener('click',e=>{
+    let element = e.target;
+    if (element.classList.contains('remove-noti')){
+      let noti = element.parentElement.parentElement;
+      try{
+
+        notificationBox.removeChild(noti);
+      }catch{
+        
+      }
+      subtitleNoti.innerHTML = notificationBox.children.length;
+      if (notificationBox.children.length <= 0){
+        notificationBox.classList.remove('show')
+      }
+    }
+  })
+})
+
+// RESPONSIVE
+
+const openNav = document.querySelector('.open-nav-header')
+const header = document.querySelector('header')
+
+openNav.addEventListener('click', ()=>{
+  header.classList.toggle('show')
 })
