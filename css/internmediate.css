@@ -178,3 +178,33 @@
   font-size: .9rem;
   cursor: pointer;
 }
+
+
+
+/* RESPONSIVE */
+
+@media  (min-width:450px) and (max-width:768px){
+  .alert-box{
+    left: 20vw;
+  }
+  .notification-box{
+    right: -3rem;
+    width:15rem;
+  }
+  .notification-box::after{
+    right: 20%;
+  }
+}
+@media only screen and (max-width:450px){
+  .alert-box{
+    left: 0vw;
+    transform:scale(.5);
+  }
+  .notification-box{
+    right: -7.5rem;
+    width:15rem;
+  }
+  .notification-box::after{
+    right: 50%;
+  }
+}

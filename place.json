@@ -5,43 +5,43 @@
     "img":"./images/danang.jpg"
 },
 {
-  "id":"1",
+  "id":"2",
   "name":"Da Lat",
   "title":"dalat",
   "img":"./images/dalat.jpg"
 },
 {
-  "id":"1",
+  "id":"3",
   "name":"HCM",
   "title":"hcm",
   "img":"./images/hcm.jpg"
 },
 {
-  "id":"1",
+  "id":"4",
   "name":"Nha Trang",
   "title":"nhatrang",
   "img":"./images/nhatrang.jpeg"
 },
 {
-  "id":"1",
+  "id":"5",
   "name":"Ha Noi",
   "title":"hanoi",
   "img":"./images/hanoi.jpg"
 },
 {
-  "id":"1",
+  "id":"6",
   "name":"Phu Quoc",
   "title":"phuquoc",
   "img":"./images/phuquoc.jpg"
 },
 {
-  "id":"1",
+  "id":"7",
   "name":"Ha Long",
   "title":"halong",
   "img":"./images/halong.jpg"
 },
 {
-  "id":"1",
+  "id":"8",
   "name":"Hue",
   "title":"hue",
   "img":"./images/hue.jpg"

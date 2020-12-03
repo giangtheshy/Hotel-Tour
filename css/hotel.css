@@ -2196,6 +2196,7 @@ span:hover::before {
   cursor: pointer;
   font-size: 1.2rem;
   z-index: 2;
+  color: red;
 }
 .img-container{
   position: relative;
@@ -2592,6 +2593,7 @@ span:hover::before {
   .number-box{
     left: 3vw;
     width: 15rem;
+    
   }
   .open-filter-bar{
     top: 13rem;
@@ -2788,6 +2790,7 @@ span:hover::before {
   .number-box{
     left: 3vw;
     width: 15rem;
+    height: 8rem;
   }
   .open-filter-bar{
     top: 13rem;
@@ -2855,9 +2858,7 @@ span:hover::before {
     justify-content: space-between;
     z-index: 5;
   }
-  .notification-box{
-    z-index: 10;
-  }
+  
   .open-filter-bar{
     z-index: 1;
   }

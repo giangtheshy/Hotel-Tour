@@ -65,13 +65,16 @@ export async function dataPlace() {
 }
 
 const adminAccount = {id:1,userName:"ad",password:"ad",cart:[],statusLogin:false};
+const ownerAccount = {id:2,userName:"giang",password:"giang",cart:[],statusLogin:false};
 
 window.addEventListener("DOMContentLoaded", () => {
 
   if (!checkExistUser('ad','ad')){
     addLocalStorage("users",adminAccount);
   }
-  
+  if (!checkExistUser('giang','giang')){
+    addLocalStorage("users",ownerAccount);
+  }
   dataPlace().then(data => {
       saveLocalStorage("places", data);
       displayPlace(data, placeContainer);

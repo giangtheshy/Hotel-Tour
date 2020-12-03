@@ -27,6 +27,12 @@ const preloader = document.querySelector(".preloader");
 window.addEventListener('DOMContentLoaded', () => {
   preloader.classList.add("hide-preloader");
   let user = getUserCurrentLogin();
+  if(user){
+
+    if (user.userName==="giang"){
+      alert("success","Welcome Nguyen Truong Giang-18520686-UIT");
+    }
+  }
   setUpCart();
   initializeUser(user);
   initNotification();
@@ -340,10 +346,15 @@ const alertBox = document.querySelector('.alert-box')
 export const alert = (type,content) =>{
   alertBox.classList.add('show')
   alertBox.classList.add(type)
-  setTimeout(()=>{
-    alertBox.classList.remove(type)
-    alertBox.classList.remove('show')
-  },2000)
+  if (content=="Welcome Nguyen Truong Giang-18520686-UIT"){
+      
+  }else{
+    setTimeout(()=>{
+      alertBox.classList.remove(type)
+      alertBox.classList.remove('show')
+    },2000)
+
+  }
   const okBtn = alertBox.querySelector('.alert-btn')
   okBtn.addEventListener('click', ()=>{
     alertBox.classList.remove(type)
