@@ -19,7 +19,8 @@
   </div>
   <div class="alert-box">
     <div class="icon-alert ">
-      <span class="success-icon"><i class="far fa-check-circle"></i></span> <span class="error-icon"><i class="far fa-times-circle"></i></span>
+      <span class="success-icon"><i class="far fa-check-circle"></i></span> <span class="error-icon"><i
+          class="far fa-times-circle"></i></span>
       <span class="warning-icon"><i class="fas fa-exclamation-circle"></i></span>
     </div>
     <h3 class="type-alert">Successful</h3>
@@ -30,16 +31,16 @@
   </div>
   <button class="open-nav-header"><i class="fas fa-bars"></i></button>
   <header>
-    
+
     <div class="logo-header">
       <img src="./images/logo-mytour.png" alt="myTour" class="logo-home">
     </div>
     <div class="nav-header">
       <ul class="nav-center">
         <li class="nav-link"><a href="./src/hotel.html">Hotel</a></li>
-        <li class="nav-link"><a href="#">Air Ticket</a></li>
-        <li class="nav-link"><a href="#">Special Offers</a></li>
-        <li class="nav-link"><a href="#">Travel Guide</a></li>
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="#destination">Destination</a></li>
+        <li class="nav-link"><a href="#services">Travel Guide</a></li>
       </ul>
     </div>
     <div class="contact-header">
@@ -64,9 +65,10 @@
 
       </div>
       <div class="notification-icon">
-        <span class="icon-container notification-btn"><i class="far fa-bell"></i><span class="subtitle-icon subtitle-icon-noti">1</span></span>
+        <span class="icon-container notification-btn"><i class="far fa-bell"></i><span
+            class="subtitle-icon subtitle-icon-noti">1</span></span>
         <div class="notification-box">
-          
+
         </div>
       </div>
       <div class="user-icon">
@@ -77,6 +79,8 @@
             <span class="user-name">Giang</span>
           </div>
           <ul class="drop-down">
+            <li><button class="manage-user-btn profile-btn">Profile <i class="fas fa-user"></i> </button>
+            </li>
             <li><button class="manage-user-btn cart-btn">Cart <i class="fas fa-cart-arrow-down"></i> </button></li>
             <li><button class="manage-user-btn logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button></li>
           </ul>
@@ -96,7 +100,7 @@
         <div class="form">
           <div class="input">
             <input type="text" name="location" id="input-location" placeholder="Enter Name Hotel..." autocomplete="off"
-              data-id="" >
+              data-id="">
             <div class="input-box">
               <h4 class="title">Điểm đến phổ biến</h4>
               <div class="place">
@@ -169,13 +173,13 @@
     <div class="place-header">
       <h3>VIET NAM POPULATION DESTINATION</h3>
     </div>
-    <div class="place-container">
+    <div class="place-container" id="destination">
       <!-- Destination -->
     </div>
   </section>
 
 
-  <div class="service-center">
+  <div class="service-center" id="services">
     <div class="slide-show">
       <div class="slide-animation">
         <img class="img-slide slide-bot slide-first" src="./images/slide-show-1.jpg" alt="slide-show" data-id="1">
@@ -216,7 +220,7 @@
     </div>
   </div>
 
-  <footer>
+  <footer id='about'>
     <div class="left-col">
 
       <img class="logo-footer" src="./images/logo-mytour.png" alt="logo">
@@ -367,7 +371,7 @@
         Tours Booked
       </div>
       <div class="tours-container">
-        
+
       </div>
       <div class="cart-footer">
         <div class="total-price">
@@ -380,7 +384,31 @@
     </div>
   </section>
 
-
+  <section class="profile-overlay">
+    <div class="profile-wrapper">
+      <div class="header-profile">
+        My Profile
+      </div>
+      <div class="profile-content">
+        <div class="profile-content-left">
+          <h5 class="name">Full Name : </h5>
+          <h5 class="email">Email : </h5>
+          <h5 class="email">Phone Number : </h5>
+          <h5 class="email">Address : </h5>
+        </div>
+        <div class="profile-content-right">
+          <p class="name-text">Giang truong nguyen</p>
+          <p class="email-text">nhockrong98@gmail.com</p>
+          <p class="phone-text">023262*****</p>
+          <p class="address-text">Thu Duc district,Ho Chi Minh city</p>
+        </div>
+      </div>
+      <div class="profile-footer">
+        <button class="change-password">Change Password</button>
+        <button class="confirm-profile">Confirm</button>
+      </div>
+    </div>
+  </section>
 
 </body>
 
