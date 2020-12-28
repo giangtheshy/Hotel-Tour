@@ -117,7 +117,7 @@ function checkSale(bool, price, sale) {
   } else {
     return `<div class="old-price"></div>
     <div class="new-price">$<span class="get-price">${price}</span></div>
-    <div class="note">Available/Vacant</div>`;
+    <div class="note">Available</div>`;
   }
 }
 
